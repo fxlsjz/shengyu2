@@ -1,0 +1,66 @@
+	<!--搜索到的企业-->
+<div class="wrap-search">
+	<div class="findCompany m-t-20" >
+		<mobo-no-data text="请搜索或选择企业" layout="Y" class="t-a-c c-999" ng-if="!$_userSearchData.searchKey "></mobo-no-data>
+		<div class="yjgk_title">当前企业</div>
+		<!--如果接口报错，所有灯都是灰色-->
+		<div class="bigTop" ng-if="unWaring">
+			<div class="title fl c-3355a3 f-z24 line-ellipsis-1" ng-bind="$_userSearchData.companyName"></div>
+			<div class="classify fr f-z14 c-fff" >
+				<!--<span class="classifyOne" ng-click="supportColl()">尽调支持</span>-->
+				<span class="classifyTwo" ng-click="joinMonitorC(collection.company_name)">+监控</span>
+				<span class="classifyThree" ng-click="joinCollectC(collection.company_name)">+收藏</span>
+				<span class="classifyFour" ng-click="joinBlackC(collection.company_name)">+黑名单</span>
+				<span class="classifyFour" ng-if="info_red != 0" ng-click="joinRedC(collection.company_name)">+红名单</span>
+			</div>
+			<div class="icons fr f-z14" >
+				<div class="dis_inline_block">
+					<i class="gray_warning_icon" ></i>
+					<span class="c-818594">策略预警</span>
+				</div>
+				<div class="dis_inline_block">
+					<i class="gray_warning_icon"></i>
+					<span class=" c-818594" >人工预警</span>
+				</div>
+				
+				<div class="dis_inline_block">
+					<i class="gray_warning_icon"></i>
+					<span class=" c-818594">违约报警</span>
+				</div>
+			</div>
+		</div>
+		<div class="bigTop clearfix" ng-if="$_userSearchData.searchKey && !unWaring">
+			<div class="title fl c-3355a3 f-z24 line-ellipsis-1" ng-bind="$_userSearchData.companyName"></div>
+			<div class="classify fr f-z14 c-fff" ng-show="$_userSearchData.searchKey">
+				<!--<span class="classifyOne" ng-click="supportColl()">尽调支持</span>-->
+				<!--<span class="classifyTwo" ng-if="collectionJudge.is_monitor == '0'" ng-click="joinMonitorC(itemsAll.company_name)">+监控</span>
+				<span class="classifyTwo moren" ng-if="collectionJudge.is_monitor == '1'" ng-click="removeMonitorC(itemsAll.company_name)">取消监控</span>
+				<span class="classifyThree" ng-if="collectionJudge.is_collected == '0'" ng-click="joinCollectC(itemsAll.company_name)">+收藏</span>
+				<span class="classifyFour moren" ng-if="collectionJudge.is_collected == '1'" ng-click="removeCollectC(itemsAll.company_name)">取消收藏</span>
+				<span class="classifyFour" ng-if="collectionJudge.is_black == '0'" ng-click="joinBlackC(itemsAll.company_name)">+黑名单</span>
+				<span class="classifyFour moren" ng-if="collectionJudge.is_black == '1'" ng-click="removeBlackC(itemsAll.company_name)">移除黑名单</span>-->
+				<span class="classifyTwo" ng-click="joinMonitorC()">+监控</span>
+				<span class="classifyThree" ng-click="joinCollectC()">+收藏</span>
+				<span class="classifyFour" ng-click="joinBlackC()">+黑名单</span>
+				<span class="classifyFour" ng-if="info_red != 0" ng-click="joinRedC()">+红名单</span>
+			</div>
+			<div class="icons fr f-z14" ng-if="!unWaring">
+				<div class="dis_inline_block">
+					<i class="gray_warning_icon" ng-class="{'iconOne': $_collection.is_strategy=='1'}"></i>
+					<span class="c-818594">策略预警</span>
+				</div>
+				<div class="dis_inline_block">
+					<i class="gray_warning_icon" ng-class="{'iconTwo':$_collection.is_warning=='1'}"></i>
+					<span class=" c-818594" >人工预警</span>
+				</div>
+				
+				<div class="dis_inline_block">
+					<i class="gray_warning_icon" ng-class="{'iconThree':$_collection.is_risk=='1'}"></i>
+					<span class=" c-818594">违约报警</span>
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+</div>

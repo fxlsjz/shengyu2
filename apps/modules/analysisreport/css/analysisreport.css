@@ -1,0 +1,496 @@
+/*公用样式start*/
+.analysisreport .row{
+	margin:0;
+}
+.analysisreport .dis_block{
+	display:block;
+}
+.analysisreport .linkage_wrap .row{
+	padding:20px;
+}
+
+.analysisreport .col-xs-6{
+	padding:0px;
+}
+.analysisreport #three_partPage .col-xs-6{
+	padding:20px;
+	border:1px solid #E1E6EB;
+	box-sizing: border-box;
+}
+.analysisreport #three_partPage .col-xs-6.border_left_none,  .analysisreport #five_partPage .col-xs-6.border_left_none{
+	border-left:none;
+}
+.analysisreport #four_partPage .row,.analysisreport #five_partPage .row{
+	padding:20px;
+	border:1px solid #E1E6EB;
+}
+.analysisreport .linkage_wrap{
+	border:1px solid #E1E6EB;
+	/*padding: 10px;*/
+}
+.analysisreport .border_b{
+	border-bottom: 1px solid #E1E6EB;
+}
+/*评级迁跃风险分析*/
+.analysisreport .border_e_all{
+	border:1px solid #E1E6EB;
+	padding:20px;
+}
+.analysisreport .load_finance_box{
+	overflow: hidden;
+	width:100%;
+}
+.analysisreport .load_finance_left{
+	border:1px solid #E1E6EB;
+	float: left;
+	width:50%;
+	padding:20px; 
+	margin-right:50%;
+}
+.analysisreport .load_finance_right{
+	border:1px solid #E1E6EB;
+	border-left:none;
+	float: left;
+	padding:20px;
+	width:50%; 
+	position: absolute; 
+	right:0;
+	top:0;
+	bottom: 0;
+}
+.analysisreport .border_l_none{
+	border:1px solid #E1E6EB;
+	border-left:none;
+	padding:20px 0;
+}
+ .analysisreport .row_margin_0{
+ 	margin:0;
+ }
+ .analysisreport .col_padding_0{
+ 	padding:0;
+ }
+ .analysisreport .bg_color_f7f8fa{
+ 	background-color: #f7f8fa;
+ }
+ .analysisreport .m-l-16{
+	margin-left:16px;
+}
+
+.analysisreport .m-b-18{
+	margin-bottom: 18px;
+}
+.analysisreport .m-b-20{
+	margin-bottom: 20px;;
+}
+	
+ /*公用样式end*/
+ .analysisreport .bonddetail_info{
+ 	
+ }
+  .analysisreport .title,.analysisreport .info{
+  	padding-left: 30px;
+    padding-right: 55px;
+  }
+   .analysisreport .title{
+   	margin:38px 0 10px;
+   }
+   .analysisreport .info{
+   	margin-bottom: 10px;
+   	padding-left:16px;
+   	background-color:#f8f8f8;
+   	line-height:42px;
+   	margin-bottom: 20px;
+   }
+  .analysisreport .big_title{
+  	height:42px;
+  	line-height: 42px;
+  	color:#000;
+  	text-align: center;
+  	background-color: #F7F8FA;
+  	border: 1px solid #E1E6EB;
+  	border-bottom: none;
+  }
+ .analysisreport .gsxx_title {
+    position: absolute;
+    top: -6px;
+    background-image: url(../../../images/analysis/biaoti_bg.png);
+    width: 145px;
+    height: 35px;
+    text-align: center;
+    color: #fff;
+    line-height: 35px;
+    z-index: 1;
+}
+.analysisreport .yijiul li span{
+	width: 23px;
+	height: 18px;
+	display: inline-block;
+	margin-right: 12px;
+	margin-bottom: -3px;
+}
+.analysisreport ul.yijiul li.activeli {
+    background: #29323f;
+    border-right: 5px #3355a3 solid;
+}
+
+.analysisreport .public-box{
+	border: 1px solid #e1e6eb;
+	padding:40px 30px 25px 22px;
+}
+
+/*工商信息*/
+.analysisreport #analysis_b{
+	background: #fff;
+	border: 1px solid #e1e6eb;
+	margin-top: 30px;
+}
+
+.analysisreport #analysis_b .gsxx_title{
+	position: absolute;
+    top: -6px;
+    background-image: url(../../../images/analysis/biaoti_bg.png);
+    width: 145px;
+    height: 35px;
+    text-align: center;
+    color: #fff;
+    line-height: 35px;
+    z-index: 1;
+}
+.analysisreport #analysis_b .gsxx_content ul li span:first-child{
+	background: #f8f8f8;
+	width: 230px;
+	height: 38px;
+	line-height: 38px;
+	padding-left: 28px;
+	margin-right: 30px;
+	display: inline-block;
+}
+.analysisreport #analysis_b .gsxx_content ul li p{
+	margin-bottom: 4px;
+	padding: 0px 0px 0px 35px;
+}
+.analysisreport #analysis_b .gsxx_content ul li p span:nth-child(2){
+	font-size: 13px;
+    color: #767b8b;
+}
+.analysisreport #analysis_b .gsxx_content .gd_informat{
+	padding: 28px 0px 0px;
+}
+.analysisreport #analysis_b .gsxx_content .p-r-20{
+	padding-right: 20px;
+}
+.analysisreport #analysis_b .gsxx_content .gd_informat .gd_informat_p{
+	border-left: 5px #3356A2 solid;
+	padding-left: 12px;
+	margin-left: 5px;
+	margin: 12px;
+}
+.analysisreport #analysis_b .gsxx_content .gd_informat ul li{
+	height: 45px;
+	line-height: 42px;
+	margin: 0px;
+}	
+.analysisreport #analysis_b .gsxx_content .gd_informat ul li.row{
+	height: auto;
+}
+.analysisreport #analysis_b .gsxx_content .gd_informat ol li{
+	height: 42px;
+	line-height: 42px;
+	margin: 0px;
+	background: #f8f8f8;
+}
+#analysis_b .gsxx_content .gd_informat ol li p{
+	padding: 0px 0px 0px 28px;
+	margin-bottom: 0px;
+}
+#analysis_b .gsxx_content .gd_informat ul li p:first-child{
+	padding-left: 25px;
+}
+.analysisreport .p-b-25{
+	padding-bottom: 25px;
+}
+/*pdf*/
+.analysisreport .pdfbtn{
+	position: fixed;
+	width:140px;
+	height:40px;
+	text-align: center;
+	line-height: 40px;
+	top:100px;
+    right: 32px;
+	color:#fff;
+	font-size:16px;
+	background-color: #99aad1;
+	border-radius: 10px;
+	z-index:10;
+	opacity: 0.8;
+	cursor: pointer;
+}
+.analysisreport .gd_informat_b{
+		border-left: 5px #3356A2 solid;
+    padding-left: 12px;
+    margin: 18px 12px 20px 0;
+    font-weight: bold;
+    color:#000;
+}
+/*风险分析*/
+.analysisreport .bonddetail_title{
+	font-size: 14px;
+	color: #666;
+	font-weight: bold;
+	padding-left: 16px;
+	padding:30px 0 0 16px;
+}
+.analysisreport .m-l-56{
+	margin-left:56px;
+}
+.analysisreport .m-l-56 .title{
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.analysisreport .num{
+	font-size: 16px;
+	color:#666;
+	font-weight: bold;
+}
+.analysisreport .score{
+	font-size: 14px;
+    color: #666;
+    font-weight: bold;
+}
+.analysisreport .bonddetail_bus_info{
+	display: inline-block;
+	font-size: 12px;
+	color:#696d71;
+	font-weight: normal;
+	margin-left:14px;
+	padding-bottom: 20px;
+}
+.analysisreport .finance_abnormama.table>tbody>tr>td{
+	border:none;
+	vertical-align: middle;
+	font-size: 14px;
+}
+.analysisreport .finance_abnormama.table>tbody>tr>td:first-child{
+	width:20%;
+}
+.analysisreport .finance_abnormama.table>tbody>tr>td:last-child{
+	width:30%;
+}
+.analysisreport .finance_tr_fir{
+	background-color:#e7ebf2;
+	height:43px;
+	font-weight: bold;
+	font-size: 14px;
+	color:#666;
+}
+.analysisreport .finance_abnormama .evenColor{
+	background-color:#f7f8fa;
+	border:1px solid #eeeff1;
+	border-left:none;
+	border-right:none;
+
+}
+/*资本结构*/
+.analysisreport .capilat-title{
+	text-align: center; 
+	font-size: 16px;
+	/*font-weight: bolder;*/ 
+	margin: 0px 0 15px;
+}
+/*偿债能力*/
+.analysisreport .debt-flow-title{
+	text-align: center; 
+	font-size: 14px;
+	color:#000;
+	font-weight: bolder; 
+	padding-left: 16px;
+    background-color:#f7f8fa;
+    line-height: 42px;
+    border:1px solid #e1e6eb;
+    border-bottom: none;
+}
+/*表格*/
+
+.analysisreport .evenColor{
+	background-color:#e3f3fe;	
+}
+.analysisreport .table .evenColor:first-child{
+	font-weight: bolder;
+}
+/*杜邦*/
+.analysisreport .dupont_wrap{
+	position: relative;
+}
+.analysisreport .dupont_info{
+	position: absolute;
+	left:1200px;
+	top:0;
+}
+.analysisreport .dupont_reporttime{
+	margin-bottom: 30px;
+}
+.analysisreport .dupont_box_s{
+	height: 640px;
+	/*background-position: 56px 50px;*/
+	background-position: 69px 50px;
+}
+.dupont_box_x,.dupont_box_s{
+	background: url(../../../images/analysisreport/dbg_3.png) scroll no-repeat 0 0 transparent;
+}
+
+.analysisreport .dupont_wrap .item {
+    height: 30px;
+    line-height:30px;
+    position: absolute;
+}
+/*第一层*/
+.analysisreport .dupont_box_s .jzcsyl0 {
+    left:626px;
+    top: -11px;
+}
+/*第二层*/
+.analysisreport .dupont_box_s .jzcsyl1 {
+    left: 356px;
+    top: 102px;
+}
+.analysisreport .dupont_box_s .jzcsyl2 {
+    left: 896px;
+    top: 102px
+}
+/*第三层*/
+.analysisreport .dupont_box_s .jzcsyl3 {
+    left: 356px;
+    top: 222px
+}
+.analysisreport .dupont_box_s .jzcsyl4 {
+    left: 896px;
+    top: 222px
+}
+/*第四层*/
+.analysisreport .dupont_box_s .jzcsyl5 {
+    left: 170px;
+    top: 342px;
+}
+.analysisreport .dupont_box_s .jzcsyl6 {
+    left: 534px;
+    top: 342px;
+}
+.analysisreport .dupont_box_s .jzcsyl7 {
+    left: 715px;
+    top: 342px;
+}
+.analysisreport .dupont_box_s .jzcsyl8 {
+     left: 1078px;
+    top: 342px;
+}
+
+/*第五层*/
+.analysisreport .dupont_box_s .jzcsyl9 {
+    left: -8px;
+    top:452px;
+}
+.analysisreport .dupont_box_s .jzcsyl10 {
+    left: 170px;
+    top:452px;
+}
+.analysisreport .dupont_box_s .jzcsyl11 {
+    left: 352px;
+    top:452px;
+}
+.analysisreport .dupont_box_s .jzcsyl12 {
+    left: 534px;
+    top:452px;
+}
+.analysisreport .dupont_box_s .jzcsyl13 {
+    left: 715px;
+    top:452px;
+}
+.analysisreport .dupont_box_s .jzcsyl14 {
+    left: 897px;
+    top:452px;
+}
+.analysisreport .dupont_box_s .jzcsyl15 {
+    left: 1258px;
+    top:452px;
+}
+/*第六层*/
+.analysisreport .dupont_box_s .jzcsyl16 {
+    left: -8px;
+    top:574px;
+}
+.analysisreport .dupont_box_s .jzcsyl17 {
+    left: 170px;
+    top: 574px;
+}
+.analysisreport .dupont_box_s .jzcsyl18 {
+    left: 352px;
+    top: 574px;
+}
+.analysisreport .dupont_box_s .jzcsyl19 {
+    left: 534px;
+    top:574px;
+}
+.analysisreport .dupont_box_s .jzcsyl20 {
+    left: 715px;
+    top: 574px;
+}
+.analysisreport .dupont_box_s .jzcsyl21 {
+    left: 897px;
+    top: 574px;
+}
+.analysisreport .dupont_box_s .jzcsyl22 {
+    left: 1078px;
+    top: 574px;
+}
+.analysisreport .dupont_box_s .jzcsyl23 {
+    left: 1258px;
+    top: 574px;
+}
+.analysisreport .dupont_box_s .jzcsyl24 {
+    left:1440px;
+    top:574px;
+}
+
+.analysisreport .name.row,.analysisreport .value.row{
+	width:161px;
+	text-align: center;
+	font-size: 12px;
+}
+.analysisreport .name.row .col-xs-8,.analysisreport .value.row .col-xs-8,.analysisreport .name.row .col-xs-4,.analysisreport .value.row .col-xs-4{
+	padding-left:0;
+	padding-right: 0;
+}
+.analysisreport .name.row{
+		font-family: '宋体';
+		color:#fff;
+		background-color:#17579d;
+}
+.analysisreport .value.row{
+	font-family: "微软雅黑";
+	color:#000;
+	background-color:#b7dbf3;
+}
+#cr_main,#cr_main1,#finance_ardar_zx,#finance_ardar_list,#risk_high_run,#diagram_echart,#total_debt,#total_com_debt,#pie_list,#debt_pie_list,#rate_ardar_list,#y_main,#y_main1,#m_main,#m_main1,#m_main2,#m_main3,#p_main,#p_main1,#p_main2,#p_main3,#d_main,#d_main1,#df_main,#df_main1,#df_main2,#df_main3,#cross_list,#cross_line_list{
+	z-index:50;
+	
+}
+/*样例*/
+.analysisreport .hor-ver-center {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 387px;
+	height: 184px;
+	top: 50%;
+	left: 50%;
+	margin-left: -193px;
+	margin-top: -92px;
+	z-index: 60;
+}
+@media screen and (max-width: 1366px)and (min-width: 1024px){
+    .erjiul_scroll{
+    	overflow-y: scroll;
+    	height:100px;
+    }
+}

@@ -1,0 +1,90 @@
+<!--
+	author：wuhao
+	describe：分析工具的关联风险研究模块 对标分析
+-->
+<!--对标分析布局-->
+<div>
+	<!--顶部搜索-->
+	<div class="dbfx_top bg-c-f7f8fa m-b-30">
+		<div class="company_name c-666">{{$_userSearchData.searchKey}}</div>
+		<div class="vs m-l-10">VS</div>
+		<div class="search_view m-l-18">
+			<input type="text" ng-keyup="dbfxKeyup($event);" ng-change="onChangeListener();" ng-model="dbfxSearchKey.text" placeholder="输入企业名称" class="search">
+			<!--搜索的公司列表-->
+			<div class="search_list" ng-if="companyNameList">
+				<li class="search_item underline" ng-repeat="item in companyNameList" ng-click="selectCompany(item)">{{item}}</li>
+			</div>
+		</div>
+		<div class="searchbtn m-l-10" ng-click="query()">查询</div>
+	</div>
+
+	<!--对标分析-企业对企业-->
+	<div>
+		<ul ng-if="dbfxList">
+			<li ng-repeat="dbfxItem in dbfxList">
+				<!--标题-->
+				<div class="dbgx_title f-z16 m-b-15" ng-class="{'m-t-30':$index!=0}">{{dbfxItem.title}}</div>
+				<!--内容列表-->
+				<ul ng-if="dbfxItem.data_list">
+					<li ng-repeat="dataListItem in dbfxItem.data_list">
+						<!--标题-->
+						<div ng-if="$index==0" class="db_list_title bg-c-e7ebf2 c-666 ub">
+							<!--标题-->
+							<p class="p-l-50" ng-repeat="item in dataListItem.colum_list" ng-class="{true: 'ub-f2', false: 'ub-f1'}[$index=='0']">{{item}}</p>
+						</div>
+						<!--item-->
+						<div ng-if="$index!=0" class="dbgx_list_item ub underline">
+							<p class="p-l-50" ng-repeat="item in dataListItem.colum_list" ng-class="{true: 'ub-f2', false: 'ub-f1'}[$index=='0']">{{item}}</p>
+						</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<div>
+			<!--正在加载占位图-->
+			<mobo-default-data layout="Y" class="t-a-c c-999" ng-if="!dbfxList&&!isShowDbfxNoData"></mobo-default-data>
+			<!--暂无数据-->
+			<mobo-no-data-text text="暂无数据" layout="Y" class="t-a-c c-999" ng-if="isShowDbfxNoData"></mobo-no-data-text>
+		</div>
+	</div>
+</div>
+<!--17.10对标分析-企业对黑名单检测-->
+<div class="m-t-28">
+	<!--黑名单选择-->
+	<div class="dbfx_top bg-c-f7f8fa m-b-30">
+		<div class="company_name c-666">{{$_userSearchData.searchKey}}</div>
+		<div class="vs m-l-10">VS</div>
+		<select ng-click="onSelectClick()" class="blacklist m-l-18" ng-model='blackItem.display_name' ng-change="selectBlackList()" ng-options="item.display_name as item.display_name for item in blackList">
+		</select>
+		<div class="searchbtn m-l-10" ng-click="queryHmd()">查询</div>
+	</div>
+	<!--对标分析-企业对黑名单检测列表-->
+	<div>
+		<ul ng-if="hmdList">
+			<li ng-repeat="dbfxItem in hmdList">
+				<!--标题-->
+				<div class="dbgx_title f-z16 m-b-15" ng-class="{'m-t-30':$index!=0}">{{dbfxItem.title}}</div>
+				<!--内容列表-->
+				<ul ng-if="dbfxItem.data_list">
+					<li ng-repeat="dataListItem in dbfxItem.data_list">
+						<!--标题-->
+						<div ng-if="$index==0" class="db_list_title bg-c-e7ebf2 c-666 ub">
+							<!--标题-->
+							<p class="p-l-50" ng-repeat="item in dataListItem.colum_list" ng-class="{true: 'ub-f2', false: 'ub-f1'}[$index=='0']">{{item}}</p>
+						</div>
+						<!--item-->
+						<div ng-if="$index!=0" class="dbgx_list_item ub underline">
+							<p class="p-l-50" ng-repeat="item in dataListItem.colum_list" ng-class="{true: 'ub-f2', false: 'ub-f1'}[$index=='0']">{{item}}</p>
+						</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<div>
+			<!--正在加载占位图-->
+			<mobo-default-data layout="Y" class="t-a-c c-999" ng-if="!hmdList&&!isShowHmdNoData"></mobo-default-data>
+			<!--暂无数据-->
+			<mobo-no-data-text text="暂无数据" layout="Y" class="t-a-c c-999" ng-if="isShowHmdNoData"></mobo-no-data-text>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,20 @@
+.statement .statement_right{
+	width: 100%;
+	background: #fff;
+}
+.statement .statement_right .statement_title{
+	position: absolute;
+    background: url(../../../images/biaoti_bg.png) no-repeat;
+    width: 145px;
+    height: 35px;
+    top: -6px;
+    text-align: center;
+    color: #fff;
+    line-height: 35px;
+    z-index:97;
+}
+.statement .statement_right .statement_content{
+	padding: 50px 20px;
+	word-break: break-all;
+    word-wrap: break-word;
+}

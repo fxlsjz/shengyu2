@@ -1,0 +1,156 @@
+<!--
+	author：gengcongru
+	describe：分析工具的企业概况模块
+-->
+<div class="enterprise clearfix">
+	<!--搜索框-->
+	<div ng-controller="analyComCtrl">
+		<div ng-include="'apps/modules/analysis/templates/analysis-common.html'"></div>
+		<div ng-include="'apps/modules/analysis/templates/business.html'"></div>
+	</div>
+	<!--研究概况-->
+	<div id="analysis_a" ng-if="false">
+		<div class="yjgk_title">研究概况</div>
+		<div class="content yjgk_content">
+			<ol class="f-z14 m-b-0">
+				<li class="row">
+					<p class="fenxi_a col-xs-4">分析项目</p>
+					<p class="miaoshu_a col-xs-6">一句话概述</p>
+					<p class="link_a col-xs-2">链接</p>
+				</li>
+			</ol>
+			<ul class="f-z14 m-b-0">
+				<li class="row">
+					<p class="col-xs-4">财务研究</p>
+					<p class="col-xs-6">分析企业财务及行业状况</p>
+					<p class="col-xs-2 c-3355a3 curpointer" ui-sref="tabs.analysis.financial" ng-class="{true:'active',false:''}[analysisName == '/financial']"><i class="link_button"></i>查看</p>
+				</li>
+				<li class="row">
+					<p class="col-xs-4">关联风险研究</p>
+					<p class="col-xs-6">分析企业与其他企业的关系</p>
+					<p class="col-xs-2 c-3355a3 curpointer" ui-sref="tabs.analysis.associat" ng-class="{true:'active',false:''}[analysisName == '/associat']"><i class="link_button"></i>查看</p>
+				</li>
+				<li class="row">
+					<p class="col-xs-4">事件研究</p>
+					<p class="col-xs-6">分析企业涉及事件</p>
+					<p class="col-xs-2 c-3355a3 curpointer" ui-sref="tabs.analysis.event" ng-class="{true:'active',false:''}[analysisName == '/event']"><i class="link_button"></i>查看</p>
+				</li>
+				<li class="row">
+					<p class="col-xs-4">风险模式识别</p>
+					<p class="col-xs-6">分析企业风险的维度与程度</p>
+					<p class="col-xs-2 c-3355a3 curpointer" ui-sref="tabs.analysis.risk" ng-class="{true:'active',false:''}[analysisName == '/risk']"><i class="link_button"></i>查看</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--工商信息-->
+	<div id="analysis_b">
+		<div class="gsxx_title">工商信息</div>
+		<div>
+			<!--class="content gsxx_content p-b-25"-->
+			<mobo-default-data layout="Y" class="t-a-c c-999" ng-if="!$_userSearchData.companyName||isLoadingPer"></mobo-default-data>
+			<mobo-no-data text="暂无相关数据" layout="Y" class="t-a-c c-999" ng-if="$_userSearchData.companyName && NodatailConIcon"></mobo-no-data>
+			<div ng-if="$_userSearchData.companyName && datailConIcon" class="m-t-30 content gsxx_content p-b-25">
+				<ul class="f-z13 m-b-0">
+					<li class="row">
+						<p class="col-xs-6">
+							<span>统一社会信息代码</span>
+							<span ng-bind="$_userSearchData.creditCode"></span></p>
+						<p class="col-xs-6">
+							<span>注册号</span>
+							<span ng-bind="$_userSearchData.companyCode"></span>
+						</p>
+					</li>
+					<li class="row">
+						<p class="col-xs-6">
+							<span>名称</span>
+							<span ng-bind="$_colCompanyDatails.company_name"></span>
+						</p>
+						<p class="col-xs-6">
+							<span>类型</span>
+							<span ng-bind="$_colCompanyDatails.company_type"></span>
+						</p>
+
+					</li>
+					<li class="row">
+						<p class="col-xs-6">
+							<span>法定代表人</span>
+							<span ng-bind="$_colCompanyDatails.representative"></span>
+						</p>
+						<p class="col-xs-6">
+							<span>注册资本</span>
+							<span ng-bind="$_colCompanyDatails.registered_capital"></span>
+						</p>
+
+					</li>
+					<li class="row">
+						<p class="col-xs-12">
+							<span>成立日期</span>
+							<span ng-bind="$_colCompanyDatails.establish_time"></span>
+						</p>
+					</li>
+					<li class="row">
+						<p class="col-xs-12">
+							<span>住所</span>
+							<span ng-bind="$_colCompanyDatails.address"></span>
+						</p>
+					</li>
+					<li class="row">
+						<p class="row" style="margin-left:0px;">
+							<span class="col-xs-2" style="margin-right:24px;">经营范围</span>
+							<span class="col-xs-10" style="padding:10px 28px 10px 10px;" ng-bind="$_colCompanyDatails.management"></span>
+						</p>
+					</li>
+					<li class="row">
+						<p class="col-xs-12">
+							<span>曾用名</span>
+							<span ng-bind="$_colCompanyDatails.old_name"></span>
+						</p>
+					</li>
+					<li class="row">
+						<p class="row" style="margin-left:0px;">
+							<span class="col-xs-2" style="margin-right:24px;">登记状态</span>
+							<span class="col-xs-10" style="padding:10px 28px 10px 10px;" ng-bind="$_colCompanyDatails.regist_state"></span>
+						</p>
+					</li>
+				</ul>
+				<div class="row">
+					<div class="gd_informat content col-xs-6 p-r-20">
+						<p class="gd_informat_p f-z16">股东信息</p>
+						<ol>
+							<li class="row">
+								<p class="col-xs-4">企业股东</p>
+								<p class="col-xs-5">股东类型</p>
+								<p class="col-xs-3">持股比例</p>
+							</li>
+						</ol>
+						<ul>
+							<li class="row bor-b-eeeff1" ng-repeat="item in $_colCompanyDatails.shareholder_info">
+								<p class="col-xs-4" ng-bind="item.shareholder_name">红杉资本Sequoia CApital</p>
+								<p class="col-xs-5" ng-bind="item.shareholder_type">企业法人</p>
+								<p class="col-xs-3" ng-bind="item.shareholding_ratio">0.25</p>
+							</li>
+						</ul>
+					</div>
+					<div class="gd_informat content col-xs-6">
+						<p class="gd_informat_p f-z16">主要成员</p>
+						<ol>
+							<li class="row">
+								<p class="col-xs-4">序号</p>
+								<p class="col-xs-5">姓名</p>
+								<p class="col-xs-3">职务</p>
+							</li>
+						</ol>
+						<ul class="f-z14">
+							<li class="row bor-b-eeeff1" ng-repeat="item in $_colCompanyDatails.member">
+								<p class="col-xs-4" ng-bind="item.member_id"></p>
+								<p class="col-xs-5" ng-bind="item.member_name"></p>
+								<p class="col-xs-3" ng-bind="item.member_title"></p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

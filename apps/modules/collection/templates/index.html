@@ -1,0 +1,308 @@
+<div class="collection monitor m-w-1400 clearfix">
+	<!--点击尽调支持-->
+	<div ng-include="'apps/templates/support.html'"></div>
+	<!--点击监控-->
+	<div ng-include="'apps/templates/addMonitor.html'"></div>
+	<div ng-include="'apps/templates/addMonitorTwo.html'"></div>
+	<!--点击+收藏-->
+	<div ng-include="'apps/templates/addCollect.html'"></div>
+	<!--+黑名单-->
+	<div ng-include="'apps/templates/addBlack.html'"></div>
+	<!--+红名单-->
+	<div ng-include="'apps/templates/addRed.html'"></div>
+	<!--点击删除-->
+	<div ng-include="'apps/templates/nobomb.html'"></div>
+	<!--重命名-->
+	<div ng-include="'apps/templates/rename.html'"></div>
+	<!--提示-->
+	<div ng-include="'apps/templates/tip.html'"></div>
+	<!--批量收藏-->
+	<div ng-include="'apps/templates/batchCollect.html'"></div>
+
+	<div class="w220 fl contentleft">
+		<ul class="yijiul f-z16" ng-show = "yijiulshwo">
+			<li ng-click="changes(1,'search')" ng-class="{true:'active',false:''}[changeActive == 1]">
+				<span class="one"></span>查找企业
+			</li>
+			<li ng-click="changes(2,'favorites')" ng-class="{true:'active',false:''}[changeActive == 2]">
+				<span class="two activetwo"></span>收藏列表
+			</li>
+			<li ng-click="changes(3,'favoritesManage')" ng-class="{true:'active',false:''}[changeActive == 3]">
+				<span class="three"></span>收藏夹管理
+			</li>
+			<li ng-click="changes(4,'monitorlist')" ng-class="{true:'active',false:''}[changeActive == 4]">
+				<span class="two"></span>监控列表
+			</li>
+			<li ng-click="changes(5,'monitorFolder')" ng-class="{true:'active',false:''}[changeActive == 5]">
+				<span class="three"></span>监控夹管理
+			</li>
+		</ul>
+		<div class="h-nav-b f-z12 t-a-c">
+			<p style="cursor: pointer;" class="h-nav-b-p" ui-sref="tabs.collection.about" ng-class="{true:'state',false:''}[collectionName == '/about']">关于胜遇</p>
+			<p style="cursor: pointer;" ui-sref="tabs.collection.statement" ng-class="{true:'state',false:''}[collectionName == '/statement']">法律声明</p>
+		</div>
+	</div>
+	<div class=" fr contentright" ng-show = "!yijiulshwo" ui-view="">
+
+	</div>
+	<div class=" fr contentright" ng-show = "yijiulshwo">
+		<div ng-controller="analyComCtrl">
+			<div ng-include="'apps/modules/analysis/templates/analysis-common.html'"></div>
+			<div ng-include="'apps/templates/company.html'"></div>
+		</div>
+		<!--收藏夹-->
+		<div id="favorites" class="favorites m-t-30">
+			<div class="lantu">收藏列表</div>
+			<div class="selects p-t-40 p-l-30" style="margin-bottom: 20px;">
+				<!--<select class="sexs f-z13" ng-change="changeFolder()">-->
+					<!--<option ng-repeat="item in favoritesList">{{item.display_name}}</option>-->
+				<!--</select>-->
+				<select class="sexs f-z13" ng-change="changeFolder(currentModel)" ng-model="currentModel" ng-options="x.display_name for x in favoritesList">
+				</select>
+
+				<div class="classify fr f-z14 c-fff">
+					<span ng-click="batchCollection()">批量收藏</span>
+					<span ng-click="">导出excel</span>
+					<span ng-click="addMonitorJia()">所选加监控</span>
+					<span ng-click="delectCollection()">删除选中</span>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<!--旧的备份-->
+			<!--<div class="lantu">收藏列表</div>-->
+			<!--<div class="selects p-t-40 p-l-30">-->
+				<!--<select class="sexs f-z13" ng-model='colleList' ng-change="b(colleList)" ng-options="x.display_name as x.display_name for x in itemListS">-->
+				<!--</select>-->
+				<!--<div class="classify fr f-z14 c-fff">-->
+					<!--<span class="classifyTwo" ng-click="addMonitorJia()">所选加监控</span>-->
+					<!--<span class="" ng-click="delectCollection()">删除选中</span>-->
+				<!--</div>-->
+				<!--<div class="clear"></div>-->
+			<!--</div>-->
+			<!--<ol id='jumpListHigh'>-->
+				<!--<li class="row back-e5ecf1">-->
+					<!--<div class="col-xs-4 p-l-30">企业名称</div>-->
+					<!--<div class="col-xs-4">-->
+						<!--<span>策略预警</span>-->
+						<!--<span>人工预警</span>-->
+						<!--<span>违约报警</span>-->
+					<!--</div>-->
+					<!--<div class="col-xs-4">-->
+		    			<!--<div  style="display: inline-block;" ng-click="checkAll()" ng-class="{true:'check-cur',false:'check'}[checks]"  ng-if="collectionCounts != 0"></div>-->
+		    			<!--<span class="f-z13 quanxuan" ng-if="collectionCounts != 0">全选</span>						-->
+					<!--</div>-->
+				<!--</li>-->
+			<!--</ol>-->
+			<!--标题-->
+			<ol id='jumpListHigh' class="ub" style="height: 100%;background-color: rgb(226,231,242); padding-top: 0px;" ng-if="showCollectView">
+				<div ng-bind="headerCode" class="calssheaderfixed" ng-if="isShowCode == 1"></div>
+				<div ng-bind="headerName" class="calssheaderfixed"></div>
+				<div class="classheadergrade">
+					<li>
+						<ul ng-bind="headerGtade" class="father-Title"></ul>
+						<ul class="ub">
+							<li class="ub-f1 bor-t-d7 bor-r-d7" ng-bind="gradeTotalTitle"></li>
+							<li class="ub-f1 bor-t-d7 bor-r-d7" ng-bind="gradeSonTitle1"></li>
+							<li class="ub-f1 bor-t-d7 bor-r-d7" ng-bind="gradeSonTitle2"></li>
+							<li class="ub-f1 bor-t-d7 bor-r-d7" ng-bind="gradeSonTitle3"></li>
+							<li class="ub-f1 bor-t-d7" ng-bind="gradeSonTitle4"></li>
+						</ul>
+					</li>
+				</div>
+				<!--二级标题不固定,一级标题评分,二级标题评分一级标题-->
+				<div class="ub-f1 ub calssheaderunfixed">
+					<li class="father" ng-repeat="item in title" style="height: 100%;">
+						<ul class="father-Title bor-r-d7" ng-bind="item.father_title"></ul>
+						<ul class="ub">
+							<li class="bor-t-d7 bor-r-d7" ng-style="fixedWidth" ng-repeat="sonitem in item.son_list">
+								{{sonitem.name}}
+							</li>
+						</ul>
+					</li>
+				</div>
+				<div class="calssheaderwarning">预警</div>
+				<div class="calssheaderallselected">
+					<div ng-click="selectedAllClass()" ng-class="{true:'check-cur',false:'check'}[allSelected]" ></div>
+					<span class="f-z13 quanxuan">全选</span>
+				</div>
+			</ol>
+			<mobo-no-data text="暂无相关数据" layout="Y" class="t-a-c c-999" ng-if="classlist.length == 0"></mobo-no-data>
+			<!--列表内容-->
+			<ul class="collectList" ng-if="showCollectView">
+				<li style="border-bottom: 1px #d7d7d7 solid;" class="ub" ng-repeat="item in classlist">
+					<!--代码需要判断-->
+					<div class="calsscontentfixed" ng-bind="item.code" ng-if="isShowCode == 1"></div>
+					<div class="calsscontentfixed" ng-bind="item.company_name"></div>
+					<!--评分-->
+					<div class="classcontentgrade">
+						<ul class="ub">
+							<li class="ub-f1 bor-r-d7" ng-repeat="itemson in item.gradeList track by $index">
+								<div ng-bind="itemson"></div>
+							</li>
+						</ul>
+					</div>
+					<!--不固定-->
+					<div class="ub-f1 calsscontentunfixed">
+						<ul class="ub">
+							<li ng-style="fixedWidth" class="bor-r-d7"ng-repeat="sonitem in item.dataList track by $index">{{sonitem[$index]}}</li>
+						</ul>
+					</div>
+
+					<div class="calsscontentwarning">
+						<span ng-show="item.is_strategy=='0'"><i class="one"></i></span>
+						<span ng-show="item.is_strategy=='1'"><i class="two"></i></span>
+						<span ng-show="item.is_warning=='0'"><i class="one"></i></span>
+						<span ng-show="item.is_warning=='1'"><i class="three"></i></span>
+						<span ng-show="item.is_risk=='0'"><i class="one"></i></span>
+						<span ng-show="item.is_risk=='1'"><i class="four"></i></span>
+					</div>
+					<div class="calsscontentselected">
+						<div class="check" ng-click="selectedClass(item,$index)" ng-class="{'check-cur':item.isselected == true}"></div>
+						选择
+					</div>
+				</li>
+
+			</ul>
+			<!--旧的备份-->
+			<!--<ul class="shouCounts" ng-if="collectionCounts != 0">-->
+				<!--<li class="row" ng-repeat="item in collectionJia">-->
+					<!--<div class="col-xs-4 p-l-30 line-ellipsis-1" ng-bind="item.company_name" ng-click="reSearch(item.company_name)" style="cursor: pointer;"></div>-->
+					<!--<div class="col-xs-4">-->
+						<!--<span ng-show="item.is_strategy=='0'"><i class="one"></i></span>-->
+						<!--<span ng-show="item.is_strategy=='1'"><i class="two"></i></span>-->
+						<!--<span ng-show="item.is_warning=='0'"><i class="one"></i></span>-->
+						<!--<span ng-show="item.is_warning=='1'"><i class="three"></i></span>-->
+						<!--<span ng-show="item.is_risk=='0'"><i class="one"></i></span>-->
+						<!--<span ng-show="item.is_risk=='1'"><i class="four"></i></span>-->
+					<!--</div>-->
+					<!--<div class="col-xs-4 f-z13">-->
+		    			<!--<div class="check" style="display: inline-block;" ng-click="check(item,$index)" ng-class="{'check-cur':item.$selected == true}"></div>-->
+		    			<!--选择-->
+					<!--</div>-->
+				<!--</li>-->
+
+			<!--</ul>-->
+			<!--旧的分页-->
+			<!--<div class="divFenye" ng-if="classlist.length != 0 && showCollectView">-->
+				<!--<div  class="wrap-page">-->
+					<!--<tm-pagination conf="paginationConf"></tm-pagination>-->
+				<!--</div>-->
+			<!--</div>-->
+			<div class="divFenye" ng-if="classlist.length != 0 && showCollectView">
+				<div class="wrap-page">
+					<div id="demo1"></div>
+				</div>
+			</div>
+
+		</div>
+		<!--收藏管理-->
+		<div id="favoritesManage">
+			<div class="lantu">收藏夹管理</div>
+			<div class="p-t-40">
+				<div class="setupAll row m-l-0 m-r-0">
+					<div class="col-xs-1 p-l-0">
+						<span class="setup" ng-click="setup()">创建</span>
+					</div>
+					<div class="col-xs-10 p-l-0">
+						<input placeholder="请输入要创建组别名称" class="setSearch" ng-model="fileName"/>
+					</div>
+					<div class="col-xs-1 p-l-0 p-r-0">
+						<!--<div class="f-z13 m-r-0" style="display: inline-block;">删除</div>-->
+					</div>
+				</div>
+			</div>
+			<mobo-no-data text="暂无相关数据" layout="Y" class="t-a-c c-999" ng-if="collectionAllCounts == 0"></mobo-no-data>
+			<ul style="padding-bottom: 51px;">
+				<li class="row m-l-0 m-r-0" ng-repeat="itemList in itemListS">
+					<div class="col-xs-1 p-l-0"><span class="rename" ng-click="rename(itemList.set_id,itemList.display_name)">重命名</span></div>
+					<div class="col-xs-9 p-l-0">
+						<span class="f-z14 line-ellipsis-1" ng-bind="itemList.display_name"></span>
+					</div>
+					<div class="col-xs-2 p-l-0 p-r-0 t-a-r">
+						<div class="f-z13" style="display: inline-block;" ng-click="delect(itemList.set_id)">删除</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+		<!--监控列表-->
+		<div id="monitorlist" class="m-t-30">
+			<div class="lantu">监控列表</div>
+			<div class="selects p-t-40 p-l-30">
+				<select class="sexs fl" ng-model='monitorList' ng-change="mons(monitorList)" ng-options="x.display_name as x.display_name for x in monitorListS">
+                </select>
+                <div class="classify fr f-z14 c-fff">
+					<span class="classifyTwo" ng-click="deleteMonitorFours()">删除选中</span>
+				</div>
+                <div class="clear"></div>
+			</div>
+			<ol id='jumpListHighMonitor'>
+				<li class="row back-e5ecf1">
+					<div class="col-xs-4 p-l-30">企业名称</div>
+					<div class="col-xs-4">
+						<span>策略预警</span>
+						<span>人工预警</span>
+						<span>违约报警</span>
+					</div>
+					<div class="col-xs-4">
+		    			<div  style="display: inline-block;" ng-click="checkAllMonitor()" ng-class="{true:'check-cur',false:'check'}[checkMonitorS]" ng-if="monitorListCounts != 0"></div>
+		    			<span class="f-z13 quanxuan" ng-if="monitorListCounts != 0">全选</span>
+					</div>
+				</li>
+			</ol>
+			<mobo-no-data text="暂无相关数据" layout="Y" class="t-a-c c-999" ng-if="monitorListCounts == 0"></mobo-no-data>
+			<ul class="shouCounts" ng-if="monitorAllCounts != 0">
+				<li class="row" ng-repeat="item in monitorJia">
+					<div class="col-xs-4 p-l-30 line-ellipsis-1" ng-bind="item.company_name" ng-click="reSearchMon(item.company_name)" style="cursor: pointer;"></div>
+					<div class="col-xs-4">
+						<span ng-show="item.is_strategy=='0'"><i class="one"></i></span>
+						<span ng-show="item.is_strategy=='1'"><i class="two"></i></span>
+						<span ng-show="item.is_warning=='0'"><i class="one"></i></span>
+						<span ng-show="item.is_warning=='1'"><i class="three"></i></span>
+						<span ng-show="item.is_risk=='0'"><i class="one"></i></span>
+						<span ng-show="item.is_risk=='1'"><i class="four"></i></span>
+					</div>
+					<div class="col-xs-4 f-z13" ng-if="monitorAllCounts != 0">
+		    			<div class="check" style="display: inline-block;" ng-click="checkMonitor(item,$index)" ng-class="{'check-cur':item.$selected == true}"></div>
+		    			选择
+					</div>
+				</li>
+
+			</ul>
+			<div class="divFenye" ng-if="monitorAllCounts != 0" style="line-height: 0;">
+				<div  class="wrap-page" ng-if="monitorAllCounts != 0">
+					<tm-pagination conf="paginationMonitor"></tm-pagination>
+				</div>
+			</div>
+		</div>
+		<!--监控文件夹-->
+		<div id="monitorFolder">
+			<div class="lantu">监控夹管理</div>
+			<div class="p-t-40">
+				<div class="setupAll row m-l-0 m-r-0">
+					<div class="col-xs-1 p-l-0">
+						<span class="setup" ng-click="setupThree()">创建</span>
+					</div>
+					<div class="col-xs-10 p-l-0">
+						<input type="" name="" id="" value="" placeholder="请输入要创建组别名称" class="setSearch" ng-model="fileNameThree"/>
+					</div>
+					<div class="col-xs-1 p-l-0 p-r-0">
+						<!--<div class="f-z13 m-r-0" style="display: inline-block;">删除</div>-->
+					</div>
+				</div>
+			</div>
+			<mobo-no-data text="暂无相关数据" layout="Y" class="t-a-c c-999" ng-if="monitorAllCounts == 0"></mobo-no-data>
+			<ul style="padding-bottom: 51px;">
+				<li class="row m-l-0 m-r-0" ng-repeat="itemList in monitorListS">
+					<div class="col-xs-1 p-l-0"><span class="rename"  ng-click="renameThree(itemList.set_id,$index,itemList.display_name)">重命名</span></div>
+					<div class="col-xs-9 p-l-0">
+						<span class="f-z14 line-ellipsis-1" ng-bind="itemList.display_name"></span>
+					</div>
+					<div class="col-xs-2 p-l-0 p-r-0 t-a-r">
+						<div class="f-z13" style="display: inline-block;" ng-click="delectThree(itemList.set_id)">删除</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

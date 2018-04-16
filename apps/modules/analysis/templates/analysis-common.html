@@ -1,0 +1,38 @@
+<div ng-include="'apps/templates/errcodeBomb.html'"></div>
+<!--点击尽调支持-->
+<div ng-include="'apps/templates/support.html'"></div>
+<!--点击监控-->
+<div ng-include="'apps/templates/addMonitor.html'"></div>
+<!--点击+收藏-->
+<div ng-include="'apps/templates/addCollect.html'"></div>
+<!--+黑名单-->
+<div ng-include="'apps/templates/addBlack.html'"></div>
+<!--+红名单-->
+<div ng-include="'apps/templates/addRed.html'"></div>
+<!--点击删除-->
+<div ng-include="'apps/templates/nobomb.html'"></div>
+<!--提示-->
+<div ng-include="'apps/templates/tip.html'"></div>
+<div class="wrap-search">
+	<div id="search">
+		<div class="searchCenter">
+			<div class="clearfix">
+				<div class="fl">
+					<input type="text" ng-keyup="myKeyup($event);" ng-change="sousukeyup(searchKey.text,$event);" ng-model="searchKey.text" value="{{searchKey.text}}" placeholder="输入搜索关键词" class="souSearch" />
+					<div class="sousuocon" id="sousuocon" ng-style="isHidden">
+						<div class="sousuoconjuz" ng-change="change(x)" ng-model="x" multiple>
+							<ul ng-repeat="data in datas">
+								<li ng-click="sousuoname(data)">
+									<span class="codetitle" ng-bind="data"></span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<span class="searchGo fr" ng-click="sousuobutton()"></span>
+			</div>
+			<div class="sertip" ng-if="isShowTip">请搜索企业或在收藏管理中选择一个企业</div>
+		</div>
+	</div>
+
+</div>

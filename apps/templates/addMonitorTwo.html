@@ -1,0 +1,19 @@
+<!--弹出监控框-->
+<div class="cancel modal-backdrops fade" ng-show="addmonitorPlayTwo"  ng-class="{'in':addmonitorPlayTwo,'display-block':addmonitorPlayTwo,'display-none':!addmonitorPlayTwo}">
+	<div class="play-box" style="position: fixed;margin-top: -130px;">
+		<div class="tip">
+			<button class="closebtn" ng-click="closeMonitor()"></button>
+		</div>
+		<div class="selects t-a-c p-t-40">
+			<select class="sexs f-z13 c-9ea4ab" ng-model='monitorAllList' ng-change="a(monitorAllList)" ng-options="v.display_name as v.display_name for v in allListS">
+                <!--<option  ng-repeat="allMonitorList in allListS" ng-bind="allMonitorList.display_name | cut:true:17:' ...'"></option>-->
+         </select>
+		</div>
+		<div class="t-a-c p-t-25">
+			<span class="okplay" ng-click = "addCollection(monitorAllList)">是</span>
+			<span class="noplay m-l-20" ng-click = "closeMonitor()">否</span>
+		</div>
+	</div>
+</div>
+<!-- 公用遮罩层  保存、加载... -->
+<div style="z-index:1002;opacity: 0;" ng-show="addmonitorPlayTwo" class="modal-backdrop fade " ng-class="{'in': addmonitorPlayTwo, 'display-block': addmonitorPlayTwo, 'display-none':!addmonitorPlayTwo}"></div>

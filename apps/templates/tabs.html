@@ -1,0 +1,40 @@
+<div class="h100">
+	<!--头部导航栏-->
+	<div id="h68">
+		<div class="w220 tabLogin fl">
+			<div class="navIma"></div>
+		</div>
+		<!--ng-class="{true: 'z_index_max', false: 'z_index_99'}[bodyOverFlowIsAuto]"-->
+		<div class="nav fr clearfix">
+			<ul class="navOne fl f-z16">
+				<li ui-sref="tabs.collection" ng-class="{true: 'tab_check', false: ''}[tabName == '/collection']">收藏监控</li>
+				<li ui-sref="tabs.analysisreport" ng-class="{true: 'tab_check', false: ''}[tabName == '/analysisreport']">分析报告</li>
+				<li ui-sref="tabs.analysis.enterprise" ng-class="{true: 'tab_check', false: ''}[tabName == '/analysis']">分析工具</li>
+				<!--<li ui-sref="tabs.monitor" ng-class="{true: 'tab_check', false: ''}[tabName == '/monitor']">监控管理</li>-->
+				<li ui-sref="tabs.nameList" ng-class="{true: 'tab_check', false: ''}[tabName == '/nameList']">名单管理</li>
+				<!--<li ui-sref="tabs.strategy" ng-class="{true: 'tab_check', false: ''}[tabName == '/strategy']">策略管理</li>-->
+				<li ui-sref="tabs.news" ng-class="{true: 'tab_check', false: ''}[tabName == '/news']" id="myNews">消息中心</li>
+				<li ng-click='aa()' ui-sref="tabs.news" id="shandongFlash">消息中心</li>
+				<!--<li ui-sref="tabs.news" ng-class="{true: 'tab_check', false: ''}[tabName == '/news']" id="myNews" ng-show="!flashToggle">消息中心</li>
+				<li ui-sref="tabs.news"  class="shandongFlash" ng-show="flashToggle">消息中心</li>-->
+			</ul>
+			<ul class="navTwo fr f-z12">
+				<li><span></span>资料下载</li>
+				<!--ng-click="erCodeHtml()"-->
+				<li ui-sref="tabs.instruct" ng-class="{true: 'tabtwo_check', false: ''}[tabName == '/instruct']"><span></span>使用说明</li>
+				<li ui-sref="tabs.accountset" ng-class="{true: 'tabtwo_check', false: ''}[tabName == '/accountset']"><span></span>账户设置</li>
+				<li ng-click="loginout()"><span></span>用户退出</li>
+			</ul>
+		</div>
+	</div>
+	<alert-bar class="alert_bar" message="tipService.message" type="tipService.type"></alert-bar>
+	<div ng-include="'apps/templates/erCode.html'"></div>
+	<!--视图-->
+	<div ui-view=""></div>
+
+	<div class="footer fr">
+
+		京ICP备17023522号-2
+	</div>
+	<div class="goback" ng-click="gobackTop()"></div>
+</div>

@@ -1,0 +1,71 @@
+<!--
+	author：gengcongru
+	describe：分析工具的风险模式识别模块
+-->
+<div class="risk clearfix">
+	<!--搜索框-->
+	<div ng-controller="analyComCtrl">
+		<div ng-include="'apps/modules/analysis/templates/analysis-common.html'"></div>
+		<div ng-include="'apps/modules/analysis/templates/business.html'"></div>
+	</div>
+	<!--风险传导-->
+	<div id="analysis_p">
+		<div class="yjgk_title">风险传导</div>
+		<div class="selects p-t-40 p-l-30 clearfix">
+           <select class="types fr f-z13 c-9ea4ab" name="types" ng-model='userSex' ng-init="userSex='0'" ng-value="userSex">
+                <option value="0">风险类型</option>
+                <option value="1">风险类型1</option>
+                <option value="2">风险类型2</option>
+          	</select>
+		</div>
+		<div class="content yjgk_content">
+			<ol class="f-z14 m-b-0">
+				<li class="row"> 
+					<p class="col-xs-3">关联类型</p>
+					<p class="col-xs-3">风险点数量</p>
+					<p class="col-xs-3">传导概率</p>
+					<p class="col-xs-3">详细说明</p>
+					
+				</li>
+			</ol>
+			<ul class="f-z14 m-b-0">
+				<li class="row">
+					<p class="col-xs-3">Association关联中</p>
+					<p class="col-xs-3">风险点数量980</p>
+					<p class="col-xs-3">180%</p>
+					<p class="col-xs-3 c-3355a3 curpointer" ng-click="details()"><i class="link_button"></i>详情</p>
+				</li>
+				<li class="row">
+					<p class="col-xs-3">Association关联中</p>
+					<p class="col-xs-3">风险点数量980</p>
+					<p class="col-xs-3">180%</p>
+					<p class="col-xs-3 c-3355a3 curpointer" ng-click="details()"><i class="link_button"></i>详情</p>
+				</li>
+				<li class="row">
+					<p class="col-xs-3">Association关联中</p>
+					<p class="col-xs-3">风险点数量980</p>
+					<p class="col-xs-3">180%</p>
+					<p class="col-xs-3 c-3355a3 curpointer" ng-click="details()"><i class="link_button"></i>详情</p>
+				</li>
+				<li class="row">
+					<p class="col-xs-3">Association关联中</p>
+					<p class="col-xs-3">风险点数量980</p>
+					<p class="col-xs-3">180%</p>
+					<p class="col-xs-3 c-3355a3 curpointer" ng-click="details()"><i class="link_button"></i>详情</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--高危经营模式-->
+	<div id="analysis_q" class="back-f7f8fa">
+		<div class="yjgk_title">高危经营模式</div>
+		<div class="selects p-t-40 p-l-30 clearfix">
+			<select class="types fr f-z13 c-9ea4ab" name="types" ng-model='userSex' ng-init="userSex='0'" ng-value="userSex">
+                <option value="0">输入企业名称</option>
+                <option value="1">名称1</option>
+                <option value="2">名称2</option>
+          	</select>
+		</div>
+		<div id="px_echear" style="height: 600px; width: 97%;">搜索</div>
+	</div>
+</div>

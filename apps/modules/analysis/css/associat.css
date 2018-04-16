@@ -1,0 +1,623 @@
+/*搜索框*/
+
+
+/*.associat #search{
+	width: 100%;
+	height: 98px;
+	background: #dfe5ed;
+	line-height: 98px;
+	text-align: center;
+}
+.associat .souSearch{
+	width: 700px;
+	height: 40px;
+	line-height: 40px;
+	background: #fff;
+	border-radius: 5px;
+	border: 1px solid #d6dbe3;
+	padding-left: 24px;
+	font-size: 14px;
+	vertical-align: middle;
+}
+.associat .searchGo{
+	width: 90px;
+	height: 38px;
+	background: #3355a3 url(../../../images/com_sousuo_icon.png) no-repeat 50% 50%;
+	display: inline-block;
+	vertical-align: middle;
+	border-radius: 5px;
+	margin-left: 14px;
+}*/
+
+
+/*搜索到的企业*/
+
+.associat .findCompany {
+	background: #fff;
+	border: 1px solid #e1e6eb;
+}
+
+.associat .findCompany .bigTop {
+	height: 105px;
+	line-height: 105px;
+}
+
+.associat .findCompany .bigTop .title {
+	padding-left: 30px;
+	padding-right: 55px;
+}
+
+.associat .findCompany .bigTop .icons span {
+	/*margin-right: 12px;*/
+	/*padding:6px 14px;
+	border: 1px solid #d6dbe3;
+	border-radius: 4px;*/
+}
+
+.associat .findCompany .bigTop .classify {
+	margin-right: 40px;
+}
+
+.associat .findCompany .bigTop .classify span {
+	margin-right: 10px;
+	padding: 6px 14px;
+	border-radius: 4px;
+	background: #3355a3;
+	height: 34px;
+	display: inline-block;
+	line-height: 20px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.associat p {
+	margin: 0;
+}
+
+.associat .m-l-10 {
+	margin-left: 10px;
+}
+
+.associat .m-l-18 {
+	margin-left: 18px;
+}
+
+.associat .m-l-20- {
+	margin-left: -20px;
+}
+
+.associat .m-t-24 {
+	margin-top: 24px;
+}
+
+.associat .m-t-28 {
+	margin-top: 28px;
+}
+
+.associat .m-t-35 {
+	margin-top: 35px;
+}
+
+.associat .m-t-40 {
+	margin-top: 40px;
+}
+
+.associat .m-b-2 {
+	margin-bottom: 2px;
+}
+
+.associat .m-b-15 {
+	margin-bottom: 15px;
+}
+
+.associat .m-b-20 {
+	margin-bottom: 20px;
+}
+
+.associat .m-b-30 {
+	margin-bottom: 30px;
+}
+
+.associat .bg-c-f7f8fa {
+	background-color: #F7F8FA;
+}
+
+.associat .bg-c-f {
+	background-color: #ffffff;
+}
+
+.associat .c-39434e {
+	color: #39434e;
+}
+
+
+/*分割线*/
+
+.associat .underline {
+	box-sizing: border-box;
+	border-bottom: 1px solid #e1e6eb;
+}
+
+
+/*切换标签布局*/
+
+.associat .dbfx_label {
+	height: 35px;
+	border-bottom: 1px solid #e1e6eb;
+	text-align: left;
+	box-sizing: border-box;
+}
+
+
+/*切换标签*/
+
+.associat .dbfx_label span {
+	display: inline-block;
+	height: 100%;
+	padding: 0 25px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	line-height: 35px;
+	margin-right: 12px;
+	cursor: pointer;
+}
+
+
+/*切换标签选中*/
+
+.associat .dbfx_label_selected {
+	border: none;
+	color: white;
+	background: #3355a3;
+}
+
+
+/*切换标签未选中*/
+
+.associat .dbfx_label_item {
+	border-top: 1px solid #e1e6eb;
+	border-left: 1px solid #e1e6eb;
+	border-right: 1px solid #e1e6eb;
+	color: #707380;
+	background: white;
+}
+
+
+/*担保列表标题*/
+
+.associat .db_list_title {
+	min-height: 42px;
+	line-height: 42px;
+	font-weight: bold;
+}
+
+
+/*担保列表item*/
+
+.associat .db_list_item {
+	min-height: 54px;
+	line-height: 54px;
+	color: #39434e;
+}
+
+
+/*担保列表底部按钮*/
+
+.associat .dbfx_bottom_btn {
+	color: #fff;
+	background: #3355a3;
+	border-radius: 6px;
+	padding: 10px 35px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+
+/*担保关系列表*/
+
+.associat .dbgx_list {
+	padding-top: 25px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+
+/*担保关系标题*/
+
+.associat .dbgx_title {
+	padding-left: 20px;
+	color: black;
+	border-left: 3px solid #3355a3;
+}
+
+
+/*担保关系列表item*/
+
+.associat .dbgx_list_item {
+	min-height: 50px;
+	line-height: 50px;
+	color: #39434e;
+}
+
+
+/*循环担保明细列表item*/
+
+.associat .xhdb_list_item {
+	min-height: 48px;
+	line-height: 48px;
+	color: #39434e;
+}
+
+
+/*循环担保明细列表序号*/
+
+.associat .xhdb_list_num {
+	position: relative;
+}
+
+
+/*循环担保明细列表序号显示*/
+
+.associat .xhdb_list_num_text {
+	top: 50%;
+	margin-top: -24px;
+	position: absolute;
+}
+
+
+/*对标分析顶部搜索栏布局*/
+
+.associat .dbfx_top {
+	padding: 33px 30px;
+}
+
+
+/*对标分析顶部搜索栏公司名称*/
+
+.associat .dbfx_top .company_name {
+	line-height: 30px;
+	display: inline-block;
+}
+
+
+/*对标分析顶部搜索栏vs*/
+
+.associat .dbfx_top .vs {
+	line-height: 30px;
+	font-weight: bold;
+	font-size: 18px;
+	color: #3355A3;
+	display: inline-block;
+}
+
+
+/*对标分析顶部搜索栏搜索*/
+
+.associat .dbfx_top .search_view {
+	width: 456px;
+	height: 30px;
+	display: inline-block;
+	background: #fff;
+	border-radius: 3px;
+	border: 1px solid #E1E6EB;
+	box-sizing: border-box;
+	background: url(../../../images/collection/jkgl_chazhaoqiye_icon.png) no-repeat;
+	background-position: 10px 7px;
+	background-color: white;
+}
+
+
+/*对标分析顶部搜索栏搜索*/
+
+.associat .dbfx_top .search {
+	width: 423px;
+	height: 30px;
+	line-height: 30px;
+	margin-left: 33px;
+}
+
+
+/*对标分析顶部搜索栏公司列表*/
+
+.associat .dbfx_top .search_list {
+	left: 0;
+	right: 0;
+	top: 30px;
+	position: absolute;
+	background-color: white;
+	z-index: 99;
+	max-height: 1200;
+	overflow-y: auto;
+}
+
+
+/*对标分析顶部搜索栏公司列表item*/
+
+.associat .dbfx_top .search_item {
+	width: 100%;
+	min-height: 40px;
+	line-height: 40px;
+	padding-left: 33px;
+}
+
+
+/*对标分析查询按钮*/
+
+.associat .dbfx_top .searchbtn {
+	color: white;
+	background: #3355a3;
+	border-radius: 6px;
+	line-height: 30px;
+	padding: 0 15px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+
+/*黑名单列表*/
+
+.associat .blacklist {
+	border: 1px solid #cdcdcd;
+	border-radius: 3px;
+	width: 423px;
+	height: 30px;
+	padding-left: 20px;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background: url(../../../images/collection/xiala.png);
+	background-position: right;
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	padding-right: 30px;
+	line-height: 30px;
+	background-color: white;
+}
+
+.associat .dbfx_top .search_list .search_item:hover {
+	background: #ccc;
+}
+
+.dbfx_content .seemap {
+	outline: none;
+	border: 0px;
+}
+
+.dbfx_content .seemapEd {
+	margin: 0;
+	margin-bottom: 20px;
+}
+
+.associat .m-t-65 {
+	margin-top: 65px;
+}
+
+.associat #analysis_f {
+	background: #fff;
+	border: 1px solid #e1e6eb;
+}
+
+.associat #analysis_g {
+	background: #fff;
+	border: 1px solid #e1e6eb;
+}
+
+.associat #analysis_l {
+	background: #fff;
+	border: 1px solid #e1e6eb;
+}
+
+.associat #analysis_m {
+	background: #fff;
+	border: 1px solid #e1e6eb;
+}
+
+.dbfx_title {
+	position: absolute;
+	top: -6px;
+	background-image: url(../../../images/analysis/biaoti_bg.png);
+	width: 145px;
+	height: 35px;
+	text-align: center;
+	color: #fff;
+	line-height: 35px;
+}
+
+.dbfx_content {
+	padding: 60px 30px 42px 30px;
+}
+
+.associat .hor-ver-center {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 387px;
+	height: 184px;
+	top: 50%;
+	left: 50%;
+	margin-left: -193px;
+	margin-top: -92px;
+	z-index: 10;
+}
+
+.dbfx_content ol> li {
+	height: 42px;
+	line-height: 42px;
+	color: #666;
+	font-weight: bold;
+	background: #e7ebf2;
+}
+
+.dbfx_content ol li p {
+	margin-bottom: 0px;
+	padding-left: 30px;
+}
+
+.dbfx_content_ul_li {
+	height: 54px;
+	line-height: 54px;
+	color: #39434e;
+	background: #fff;
+}
+
+.dbfx_content ul li p {
+	margin-bottom: 0px;
+	padding-left: 30px;
+	color: #39434e;
+}
+
+.associat .jiance {
+	padding: 0px 36px;
+	background: #F7F8FA;
+}
+
+.jianceT {
+	width: 100px;
+	display: inline-block;
+}
+
+.jiance span i {
+	background: url(../../../images/analysis/sousuo_icon_hui.png) no-repeat;
+	width: 12px;
+	height: 12px;
+	padding: 0px 8px;
+	display: inline-block;
+}
+
+.jiance .jianceSearch {
+	width: 400px;
+	height: 40px;
+	line-height: 40px;
+	background: #fff;
+	border-radius: 5px;
+	border: 1px solid #d6dbe3;
+	padding-left: 8px;
+	font-size: 14px;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.jiance .jianceSearch input {
+	width: 374px;
+	height: 40px;
+	line-height: 40px;
+}
+
+.jiance .chaxun {
+	width: 70px;
+	height: 36px;
+	line-height: 36px;
+	color: #fff;
+	background: #3355a3;
+	border-radius: 6px;
+	margin-left: 9px;
+	text-align: center;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.jiance .addbutton span {
+	margin-right: 10px;
+	padding: 6px 14px;
+	border-radius: 4px;
+	background: #3355a3;
+	color: #fff;
+	height: 34px;
+	display: inline-block;
+	line-height: 20px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.jiance_result {
+	height: 91px;
+	padding-left: 40px;
+	padding-top: 24px;
+}
+
+
+/*.associat .selects{
+	background: #fff;
+	width: 350px;
+	display: inline-block;
+}*/
+
+.associat .selects select {
+	border: 1px solid #cdcdcd;
+	border-radius: 3px;
+	width: 350px;
+	height: 30px;
+	padding-left: 20px;
+	/*很关键：将默认的select选择框样式清除*/
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	/*在选择框的最右侧中间显示小箭头图片*/
+	background: url(../../../images/analysis/sanjioa.png) no-repeat scroll 317px transparent;
+	/*为下拉小箭头留出一点位置，避免被文字覆盖*/
+	padding-right: 30px;
+}
+
+
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+
+select::-ms-expand {
+	display: none;
+}
+
+.associat .per-company {
+	height: 40px;
+	line-height: 40px;
+	margin-bottom: 15px;
+}
+
+.associat .c-red {
+	color: #F25560;
+}
+
+.associat .t-r {
+	text-align: right;
+}
+
+.associat .layout-em {
+	padding: 6px 0;
+	display: inherit
+}
+
+.associat .wrap-search .sousuoconjuz>ul {
+	width: 100%;
+	background: #fff;
+}
+
+.associat .wrap-search .sousuoconjuz {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.associat .m-b-18 {
+	margin-bottom: 24px;
+}
+
+
+/*放大的样式*/
+
+
+/*.associat .toLarger{
+	position:fixed;
+	top:20px;
+	left:20px;
+	bottom:20px;
+	right:20px;
+	margin-left:0;
+	margin-top:0;
+}*/
+
+.associat .toLarger {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin-left: 0;
+	margin-top: 0;
+}

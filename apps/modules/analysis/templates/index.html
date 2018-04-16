@@ -1,0 +1,43 @@
+<!--
+	author：gengcongru
+	describe：分析工具模块下的各个路由的入口
+-->
+<div class="analysis m-w-1400 clearfix">
+	<div class="w220 fl contentleft">
+		<ul class="yijiul f-z16" ng-show="yijiulshwo">
+			<li ui-sref="tabs.analysis.enterprise" ng-class="{true:'active',false:''}[analysisName == '/enterprise']"><span class="one"></span>企业概况</li>
+			<ul ng-show="analysisName == '/enterprise'" class="erjiul">
+				<li ng-if="false" ng-click="changeul('analysis_a')" ng-class="{true:'activeli',false:''}[changeActiveul == 'analysis_a']">研究概况</li>
+				<li ng-click="changeul('analysis_b')" ng-class="{true:'activeli',false:''}[changeActiveul == 'analysis_b']">工商信息</li>
+			</ul>
+			<li ui-sref="tabs.analysis.financial" ng-class="{true:'active',false:''}[analysisName == '/financial']"><span class="two"></span>风险研究</li>
+			<ul ng-show="analysisName == '/financial'" class="erjiul">
+				<li ng-click="changeul('analysis_xyfxfx')" ng-class="{true:'activeli',false:''}[changeActiveul == 'analysis_xyfxfx']">信用风险分析</li>
+				<li ng-click="changeul('analysis_c')" ng-class="{true:'activeli',false:''}[changeActiveul == 'analysis_c']">主体财务状况评分</li>
+				<li ng-click="changeul('analysis_m_c')" ng-class="{true:'activeli',false:''}[changeActiveul == 'analysis_m_c']">财务异常分析</li>
+				<!--<li ng-click="changeul('analysis_d')" ng-class="{true:'activeli',false:''}[changeActiveul == 'analysis_d']">自由现金流预测</li>
+				<li ng-click="changeul('analysis_e')" ng-class="{true:'activeli',false:''}[changeActiveul == 'analysis_e']">行业盈利预测</li>-->
+			</ul>
+			<li ui-sref="tabs.analysis.associat" ng-class="{true:'active',false:''}[analysisName == '/associat']"><span class="three"></span>关联风险研究</li>
+			<ul ng-show="analysisName == '/associat'" class="erjiul">
+				<!--<li ng-click="changeul('analysis_f')" ng-class="{true:'activeli',false:''}[changeActiveul == 'analysis_f']">担保风险分析</li>
+					<li ng-click="changeul('analysis_g')" ng-class="{true:'activeli',false:''}[changeActiveul == 'analysis_g']">应收风险分析</li>
+					<li ng-click="changeul('analysis_l')" ng-class="{true:'activeli',false:''}[changeActiveul == 'analysis_l']">诉讼风险分析</li>
+					<li ng-click="changeul('analysis_m')" ng-class="{true:'activeli',false:''}[changeActiveul == 'analysis_m']">工商关联分析</li>-->
+			</ul>
+			<li ng-if="false" ui-sref="tabs.analysis.event" ng-class="{true:'active',false:''}[analysisName == '/event']"><span class="four"></span>事件研究</li>
+			<li ui-sref="tabs.analysis.risk" ng-class="{true:'active',false:''}[analysisName == '/risk']"><span class="five"></span>风险模式识别</li>
+			<ul ng-show="analysisName == '/risk'" class="erjiul">
+				<li ng-click="changeul('analysis_p')" ng-class="{true:'activeli',false:''}[changeActiveul == 'analysis_p']">风险传导</li>
+				<li ng-click="changeul('analysis_q')" ng-class="{true:'activeli',false:''}[changeActiveul == 'analysis_q']">高危经营模式</li>
+			</ul>
+		</ul>
+		<div class="h-nav-b f-z12 t-a-c">
+			<p style="cursor: pointer;" class="h-nav-b-p" ui-sref="tabs.analysis.about" ng-class="{true:'state',false:''}[analysisName == '/about']">关于胜遇</p>
+			<p style="cursor: pointer;" ui-sref="tabs.analysis.statement" ng-class="{true:'state',false:''}[analysisName == '/statement']">法律声明</p>
+		</div>
+	</div>
+	<div class=" fr contentright" ui-view="">
+
+	</div>
+</div>

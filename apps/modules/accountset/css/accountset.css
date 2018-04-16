@@ -1,0 +1,97 @@
+.accountset .yijiul li span{
+	width: 18px;
+	height: 16px;
+	display: inline-block;
+	margin-right: 12px;
+	margin-bottom: -2px;
+}
+.accountset .yijiul li span.one{
+	background: url(../../../images/icon1_pressed.png) no-repeat;	
+}
+/*重置密码*/
+#reset{
+	background: #fff;
+}
+#receive{
+	background: #fff;
+}
+.accountset .yjgk_title{
+	position: absolute;
+    top: -6px;
+    background-image: url(../../../images/analysis/biaoti_bg.png);
+    width: 145px;
+    height: 35px;
+    text-align: center;
+    color: #fff;
+    line-height: 35px;
+}
+.accountset .yjgk_content{
+	padding: 48px 15px 0px 15px;
+}
+
+.login {
+    width: 440px;
+    padding: 0px 48px 42px;
+    background: #fff;
+}
+.p-t-32 img, .p-t-20 img {
+    position: absolute;
+    top: 33px;
+    left: 1px;
+}
+.users {
+    border: 1px solid #dedede;
+    padding-left: 48px;
+    width: 100%;
+    background-color: #fff;
+    height: 43px;
+}
+.p-t-20 img {
+    top: 32px;
+    top: 21px;
+}
+.gets {
+    font-size: 14px;
+    color: #1288DB;
+    position: absolute;
+    top: 31px;
+    right: 20px;
+    border-left: 2px solid #dedede;
+    padding-left: 20px;
+    cursor: pointer;
+}
+.reset {
+    padding-left: 15px;
+}
+.passwords {
+    border: 1px solid #dedede;
+    padding-left: 48px;
+    width: 100%;
+    background-color: #fff;
+    height: 43px;
+}
+.submits {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin-top: 35px;
+    background: url(../../../images/denglu_btn.png);
+    cursor: pointer;
+    font-size: 18px;
+    color: #fff;
+    width: 100%;
+}
+.content_form{
+	padding: 32px 48px 42px;
+}
+.receive_sub {
+    width: 290px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin-left: 48px;
+    background: url(../../../images/denglu_btn.png);
+    cursor: pointer;
+    font-size: 18px;
+    color: #fff;
+}

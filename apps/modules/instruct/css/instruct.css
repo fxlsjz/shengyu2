@@ -1,0 +1,29 @@
+.instruct .yijiul li span{
+	width: 18px;
+	height: 17px;
+	display: inline-block;
+	margin-right: 12px;
+	margin-bottom: -3px;
+}
+.instruct .yijiul li span.one{
+	background: url(../../../images/icon2_pressed.png) no-repeat;	
+}
+.instruct .instryct_right{
+	width: 100%;
+	background: #fff;
+}
+.instruct .instryct_right .instruct_title{
+	position: absolute;
+    background: url(../../../images/biaoti_bg.png) no-repeat;
+    width: 145px;
+    height: 35px;
+    top: -6px;
+    text-align: center;
+    color: #fff;
+    line-height: 35px;
+}
+.instruct .instryct_right .instruct_content{
+	padding: 50px 20px;
+	word-break: break-all;
+    word-wrap: break-word;
+}

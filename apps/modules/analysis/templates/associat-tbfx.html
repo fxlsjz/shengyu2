@@ -1,0 +1,174 @@
+<!--
+	author：wuhao
+	describe：分析工具的关联风险研究模块 投保风险
+-->
+<!--担保列表布局-->
+<div>
+
+	<!--内容-->
+	<div ng-if="guaranteeList">
+		<!--投保风险-担保列表-->
+		<!--列表-->
+		<div ng-repeat="guaranteeItem in guaranteeList">
+			<!--标题-->
+			<div ng-if="$index==0" class="db_list_title bg-c-e7ebf2 c-666 ub">
+				<!--标题-->
+				<div class="ub-f1 p-l-50" ng-repeat="item in guaranteeItem.colum_list">{{item}}</div>
+			</div>
+			<!--item-->
+			<div ng-if="$index!=0" class="underline db_list_item ub">
+				<div class="ub-f1 p-l-50" ng-repeat="item in guaranteeItem.colum_list">{{item}}</div>
+			</div>
+		</div>
+		<div class="t-a-c m-t-24 f-z16">
+			<div class="dbfx_bottom_btn" ng-click="clickdiagram()">查看关联图谱</div>
+			<div class="dbfx_bottom_btn m-l-30" ng-if="false">录入担保关系</div>
+		</div>
+	</div>
+	<div>
+		<!--正在加载占位图-->
+		<mobo-default-data layout="Y" class="t-a-c c-999" ng-if="!guaranteeList&&!isShowGuaranteeNoData"></mobo-default-data>
+		<!--暂无数据-->
+		<mobo-no-data-text text="暂无数据" layout="Y" class="t-a-c c-999" ng-if="isShowGuaranteeNoData"></mobo-no-data-text>
+	</div>
+</div>
+<!--担保关系布局-->
+<div class="ub m-t-40">
+	<!--非关联对外担保-->
+	<div class="ub-f1 bg-c-f7f8fa dbgx_list" ng-class="{true:'p-b-15',false:'p-b-25'}[fgldbList]" style="padding-bottom: {{fgldbList?'10px':'25px'}};">
+		<div class="dbgx_title f-z16 m-b-20">非关联对外担保TOP5</div>
+
+		<ul ng-if="fgldbList">
+			<!--列表-->
+			<div ng-repeat="fgldbItem in fgldbList">
+				<!--标题-->
+				<div ng-if="$index==0" class="db_list_title bg-c-e7ebf2 c-666 ub">
+					<!--标题-->
+					<div class="p-l-50" ng-repeat="item in fgldbItem.colum_list track by $index" ng-class="{true: 'ub-f2', false: 'ub-f1'}[$index=='0']">{{item}}</div>
+				</div>
+				<!--item-->
+				<div ng-if="$index!=0" class="dbgx_list_item ub" ng-class="{'underline':$index!=fgldbList.length-1}">
+					<div class="p-l-50" ng-repeat="item in fgldbItem.colum_list track by $index" ng-class="{true: 'ub-f2', false: 'ub-f1'}[$index=='0']">{{item}}</div>
+				</div>
+			</div>
+		</ul>
+		<div>
+			<!--正在加载占位图-->
+			<mobo-no-data-text text="暂无数据" layout="Y" class="t-a-c c-999" ng-if="isShowgldbNoData"></mobo-no-data-text>
+			<!--暂无数据-->
+			<mobo-default-data layout="Y" class="t-a-c c-999" ng-if="!fgldbList&&!isShowgldbNoData"></mobo-default-data>
+		</div>
+	</div>
+	<!--关联对外担保-->
+	<div class="ub-f1 bg-c-f7f8fa dbgx_list m-l-30" style="padding-bottom: {{gldbList?'10px':'25px'}};">
+		<div class="dbgx_title f-z16 m-b-20">关联对外担保TOP5</div>
+
+		<ul ng-if="gldbList">
+			<!--列表-->
+			<li ng-repeat="gldbItem in gldbList">
+				<!--标题-->
+				<div ng-if="$index==0" class="db_list_title bg-c-e7ebf2 c-666 ub">
+					<!--标题-->
+					<div class="p-l-50" ng-repeat="item in gldbItem.colum_list track by $index" ng-class="{true: 'ub-f2', false: 'ub-f1'}[$index=='0']">{{item}}</div>
+				</div>
+				<!--item-->
+				<div ng-if="$index!=0" class="dbgx_list_item ub" ng-class="{'underline':$index!=fgldbList.length-1}">
+					<div class="p-l-50" ng-repeat="item in gldbItem.colum_list track by $index" ng-class="{true: 'ub-f2', false: 'ub-f1'}[$index=='0']">{{item}}</div>
+				</div>
+			</li>
+		</ul>
+		<div>
+			<!--正在加载占位图-->
+			<mobo-default-data layout="Y" class="t-a-c c-999" ng-if="!gldbList&&!isShowgldbNoData"></mobo-default-data>
+			<!--暂无数据-->
+			<mobo-no-data-text text="暂无数据" layout="Y" class="t-a-c c-999" ng-if="isShowgldbNoData"></mobo-no-data-text>
+		</div>
+	</div>
+</div>
+<!--循环担保明细布局-->
+<div>
+
+	<div class="dbgx_title m-b-18 m-t-35 f-z16">循环担保明细</div>
+	<!--列表-->
+	<div ng-if="xhdbData&&xhdbData.title_list&&xhdbData.data_list">
+		<!--标题-->
+		<div class="db_list_title bg-c-e7ebf2 c-666 ub m-b-2">
+			<!--标题-->
+			<div class="p-l-50" ng-class="{true: 'ub-f1', false: 'ub-f2'}[$index=='0']" ng-repeat="item in xhdbData.title_list">{{item}}</div>
+		</div>
+		<!--item-->
+		<div class="xhdb_list_item ub bg-c-f7f8fa underline" ng-repeat="item in xhdbData.data_list">
+			<!--序号-->
+			<div class="p-l-50 ub-f1 xhdb_list_num">
+				<div class="xhdb_list_num_text">{{item.num}}</div>
+			</div>
+			<!--内容-->
+			<div class="ub-f4 m-l-20-">
+				<div class="ub" ng-repeat="content in item.loop_info" ng-class="{'bg-c-f':$index%2==0,'underline':$index!=item.loop_info.length-1}">
+					<div class="p-l-50 ub-f1" ng-repeat="item in content track by $index">{{item}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div>
+		<!--正在加载占位图-->
+		<mobo-default-data layout="Y" class="t-a-c c-999" ng-if="!xhdbData&&!isShowxhdbNoData"></mobo-default-data>
+		<!--暂无数据-->
+		<mobo-no-data-text text="暂无数据" layout="Y" class="t-a-c c-999" ng-if="isShowxhdbNoData"></mobo-no-data-text>
+	</div>
+</div>
+
+<div class="ub m-t-35">
+	<!--获得担保公司top3-->
+	<div class="ub-f1 bg-c-f7f8fa dbgx_list" style="padding-bottom: {{dbgsList?'10px':'25px'}};">
+		<div class="dbgx_title f-z16 m-b-20">相关担保公司TOP3</div>
+		<ul ng-if="dbblData">
+			<!--列表-->
+			<li ng-repeat="dbgsItem in dbgsList">
+				<!--标题-->
+				<div ng-if="$index==0" class="db_list_title bg-c-e7ebf2 c-666 ub">
+					<div class="p-l-30" ng-repeat="item in dbgsItem.colum_list track by $index
+" ng-class="{true: 'ub-f3', false: 'ub-f1'}[$index=='0']">{{item}}</div>
+				</div>
+				<!--item-->
+				<div ng-if="$index!=0" class="dbgx_list_item ub" ng-class="{'underline':$index!=fgldbList.length-1}">
+					<div class="p-l-30" ng-repeat="item in dbgsItem.colum_list track by $index
+" ng-class="{true: 'ub-f3', false: 'ub-f1'}[$index=='0']">{{item}}</div>
+				</div>
+			</li>
+		</ul>
+		<div>
+			<!--正在加载占位图-->
+			<mobo-no-data-text text="暂无数据" layout="Y" class="t-a-c c-999" ng-if="isShowdbgsNoData"></mobo-no-data-text>
+			<!--暂无数据-->
+			<mobo-default-data layout="Y" class="t-a-c c-999" ng-if="!dbgsList&&!isShowdbgsNoData"></mobo-default-data>
+		</div>
+	</div>
+	<!--获得担保比例-->
+	<div class="ub-f1 m-l-30 bg-c-f7f8fa dbgx_list" style="padding-bottom: {{dbblData?'10px':'25px'}};">
+		<div class="dbgx_title f-z16  m-b-20">获得担保比例</div>
+		<!--内容-->
+		<div ng-if="dbblData">
+
+			<ul>
+				<!--列表-->
+				<li ng-repeat="dbblItem in dbblData.data_list track by $index">
+					<!--标题-->
+					<div ng-if="$index==0" class="db_list_title bg-c-e7ebf2 c-666 ub">
+						<div class="p-l-50 ub-f1" ng-repeat="item in dbblItem.colum_list">{{item}}</div>
+					</div>
+					<!--item-->
+					<div ng-if="$index!=0" class="dbgx_list_item ub" ng-class="{'underline':$index!=dbblData.data_list.length-1}">
+						<div class="p-l-50 ub-f1" ng-repeat="item in dbblItem.colum_list">{{item}}</div>
+					</div>
+				</li>
+			</ul>
+			<div class="dbgx_list_item p-l-30">{{dbblData.instruction}}</div>
+		</div>
+		<div>
+			<!--正在加载占位图-->
+			<mobo-no-data-text text="暂无数据" layout="Y" class="t-a-c c-999" ng-if="isShowdbblNoData"></mobo-no-data-text>
+			<!--暂无数据-->
+			<mobo-default-data layout="Y" class="t-a-c c-999" ng-if="!dbblData&&!isShowdbblNoData"></mobo-default-data>
+		</div>
+	</div>

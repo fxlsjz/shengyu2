@@ -1,0 +1,20 @@
+<!--弹出关系图-->
+
+<div class="cancel modal-backdrops fade" ng-class="{'in':diagram,'display-block':diagram,'display-none':!diagram}">
+	<div class="cancel-box" ng-if = "show" style="" ng-style="largerdiagramCss" ng-class="toLarger ?  'toLarger': 'dighor-ver-center'" id="cancel-box">
+		<div class="tip">
+			<button class="closebtn larger" ng-click="largerdiagram()" ng-if="!toLarger">+</button>
+			<button class="closebtn larger" ng-click="smalldiagram()"  ng-if="toLarger">-</button>
+			<button class="closebtn" ng-click="closediagram()"></button>
+		</div>		
+		<mobo-no-data text="暂无相关数据" layout="Y" class="t-a-c c-999" 
+				ng-if="metadata"></mobo-no-data>
+		<mobo-load-data text="正在加载..." layout="Y" class="t-a-c c-999" 
+				ng-if="isProcessing"></mobo-load-data>
+
+		<div id="diagram_echart"></div>
+	</div>
+</div>
+
+<!-- 公用遮罩层  保存、加载... -->
+<div style="z-index:1002;opacity: 0.5;" ng-if="diagram" class="modal-backdrop fade " ng-class="{'in': diagram, 'display-block': diagram, 'display-none':!diagram}"></div>

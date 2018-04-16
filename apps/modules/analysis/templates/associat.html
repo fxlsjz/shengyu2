@@ -1,0 +1,49 @@
+<!--
+	author：gengcongru
+	describe：分析工具的关联风险研究模块
+-->
+<div class="associat clearfix">
+	<!--错误信息-->
+	<div ng-include="'apps/templates/errcodeBomb.html'"></div>
+	<!--点击尽调支持-->
+	<div ng-include="'apps/templates/support.html'"></div>
+	<!--点击监控-->
+	<div ng-include="'apps/templates/addMonitor.html'"></div>
+	<!--点击+收藏-->
+	<div ng-include="'apps/templates/addCollect.html'"></div>
+	<!--+黑名单-->
+	<div ng-include="'apps/templates/addBlack.html'"></div>
+	<!--+红名单-->
+	<div ng-include="'apps/templates/addRed.html'"></div>
+	<!--点击删除-->
+	<div ng-include="'apps/templates/nobomb.html'"></div>
+	<!--点击弹框关系图-->
+	<div ng-include="'apps/templates/diagram.html'"></div>
+	<div ng-controller="analyComCtrl">
+		<div ng-include="'apps/modules/analysis/templates/analysis-common.html'"></div>
+		<div ng-include="'apps/modules/analysis/templates/business.html'"></div>
+	</div>
+	<!--担保风险分析-->
+	<div id="analysis_f" class="m-t-30 f-z14">
+		<div class="dbfx_title">关联风险研究</div>
+		<div class="dbfx_content">
+			<!--切换标签-->
+			<div class="dbfx_label">
+				<span ng-click="tab('tbfx')" ng-class="{true: 'dbfx_label_selected', false: 'dbfx_label_item'}[label=='tbfx']">担保风险</span>
+				<span ng-click="tab('gqgx')" ng-show="false" ng-class="{true: 'dbfx_label_selected', false: 'dbfx_label_item'}[label=='gqgx']">股权关系</span>
+				<span ng-click="tab('dbfx')" ng-class="{true: 'dbfx_label_selected', false: 'dbfx_label_item'}[label=='dbfx']">对标分析</span>
+				<span ng-show="false" ng-class="{true: 'dbfx_label_selected', false: 'dbfx_label_item'}[label=='tbgsfx']">担保公司风险</span>
+			</div>
+
+			<!--投保风险-->
+			<div ng-if="label=='tbfx'" class="m-t-30">
+				<div ng-include="'apps/modules/analysis/templates/associat-tbfx.html'"></div>
+			</div>
+			<!--对标分析-->
+			<div ng-if="label=='dbfx'" class="m-t-20">
+				<div ng-include="'apps/modules/analysis/templates/associat-dbfx.html'"></div>
+			</div>
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,219 @@
+<!--
+	author：gengcongru
+	describe：分析工具的财务研究模块
+-->
+<div class="financial clearfix">
+	<div ng-controller="analyComCtrl">
+		<div ng-include="'apps/modules/analysis/templates/analysis-common.html'"></div>
+		<div ng-include="'apps/modules/analysis/templates/business.html'"></div>
+	</div>
+	<div id="analysis_xyfxfx" class="m-t-24 bg-c-white">
+		<div class="cwfx_title">信用风险分析</div>
+		<!--信用风险分析说明-->
+		<div class="xyfxfx-bg" ng-if="isShowriskAnalysis">
+			<div class="line-height-42 bg-c-f8f8f8 p-l-16 p-r-16" ng-bind-html="riskAnalysisInfo | trustHtml"></div>
+		</div>
+		<!--信用风险分析图-->
+		<div id="xyfxfx_view">
+			<div ng-class="{true:'xyfxfx-bg-two',false:'xyfxfx-bg'}[isShowriskAnalysis]" ng-show="xyfxfxInfo">
+				<div class="frame">
+					<div class="p-20 ub">
+						<!--左侧图-->
+						<div class="ub-f1">
+							<div class="capilat-title">
+								<span ng-bind="cridrLineListTitle0"></span>
+							</div>
+							<div id="cr_main"></div>
+						</div>
+						<!--右侧图-->
+						<div class="ub-f1">
+							<div class="capilat-title">
+								<span ng-bind="cridrLineListTitle1"></span>
+							</div>
+							<div id="cr_main1"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--正在加载占位图-->
+			<mobo-default-data layout="Y" class="t-a-c c-999" ng-if="!xyfxfxInfo&&!isShowXyfxfxNoData"></mobo-default-data>
+			<!--暂无数据-->
+			<mobo-no-data-text text="暂无数据" layout="Y" class="t-a-c c-999" ng-if="isShowXyfxfxNoData"></mobo-no-data-text>
+
+		</div>
+	</div>
+	<!--需求说先影藏这个-->
+	<div class="findCompany m-t-20" ng-if="false">
+		<div class="content find_link">
+			<ol class="f-z14 m-b-0">
+				<li class="row">
+					<p class="fenxi_a col-xs-4">财务研究</p>
+					<p class="miaoshu_a col-xs-6">一句话概述</p>
+					<p class="link_a col-xs-2">链接</p>
+				</li>
+			</ol>
+			<ul class="f-z14 m-b-0">
+				<li class="row">
+					<p class="col-xs-4">财务风险预测</p>
+					<p class="col-xs-6">分析企业盈利、偿债、营运等风险</p>
+					<p class="col-xs-2 c-3355a3 curpointer" ng-click="changeul('analysis_c')" ng-class="{true:'activeli',false:''}[changeActiveul == 'analysis_c']"><i class="link_button"></i>查看</p>
+				</li>
+				<li class="row">
+					<p class="col-xs-4">自由现金流预测</p>
+					<p class="col-xs-6">分析企业现金流情况</p>
+					<p class="col-xs-2 c-3355a3 curpointer" ng-click="changeul('analysis_d')" ng-class="{true:'activeli',false:''}[changeActiveul == 'analysis_d']"><i class="link_button"></i>查看</p>
+				</li>
+				<li class="row">
+					<p class="col-xs-4">行业盈利预测</p>
+					<p class="col-xs-6">分析行业整体盈利能力</p>
+					<p class="col-xs-2 c-3355a3 curpointer" ng-click="changeul('analysis_e')" ng-class="{true:'activeli',false:''}[changeActiveul == 'analysis_e']"><i class="link_button"></i>查看</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--财务风险预测-->
+	<div id="analysis_c">
+		<div class="cwfx_title">主体财务状况评分</div>
+		<mobo-default-data layout="Y" class="t-a-c c-999" ng-if="!$_userSearchData.companyName||($_userSearchData.companyName && isNoData)||($_userSearchData.companyName && isShowState)"></mobo-default-data>
+		<div id="chartMon">
+			<div class="cwfx_content content">
+				<div class="row">
+					<div id="cwfx_chart" class="col-xs-6 p-l-0 p-r-0 p-b-30"></div>
+					<div class="scorediv col-xs-2 p-l-0 p-r-0 line-ellipsis-1">
+						<p>
+							<span class="scorespan"><i ng-bind="bonddetail.main_score_card.score_card_value"></i><span class="fenspan">分</span></span>
+						</p>
+						<p class="scorep" ng-bind="bonddetail.main_score_card.score_card_titile">财务风险预测得分</p>
+					</div>
+					<div class="col-xs-4 p-l-0 p-r-0">
+						<p class="cwfx_gaishu f-z14">企业概述</p>
+						<p class="cwfx_gaishu_c back-f7f8fa p-l-10 p-r-10 f-z13" ng-bind-html="bonddetail.main_score_card.score_card_brief | trustHtml">
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="content fengxian_fenxidiv">
+				<div class="fengxian_fenxi row">
+					<div class="col-xs-3 bor-r-e1e6eb t-a-c" ng-repeat="item in bonddetail.little_grade | limitTo :4">
+						<p class="cwfx_fenxia" ng-bind="item.score_card_titile">财务风险分析1</p>
+						<p class="cwfx_fenxib line-ellipsis-1">
+							<span class="fenshu" ng-bind="item.score_card_value"></span>
+							<span class="fen">分</span>
+						</p>
+						<p class="cwfx_fenxic" ng-bind-html="item.score_card_brief | trustHtml">不得从事本市产业政策禁止和限制类本市产业政策禁止和限制类</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="analysis_m_c" class="m-t-30">
+		<div class="cwfx_title">财务异常分析</div>
+		<mobo-default-data layout="Y" class="t-a-c c-999" ng-if="!$_userSearchData.companyName"></mobo-default-data>
+		<div class="cwfx_content content" ng-if="$_userSearchData.companyName">
+			<!--文字说明-->
+			<div class="info"  ng-bind-html="rishHighRun | trustHtml" ></div>
+			<div class="border_e_all">
+				<div class="capilat-title" ng-if="financeAbnormamalGridDataList.length > 0">
+					<span ng-bind="financeAbnormamalGridDataListTitle"></span>
+				</div>
+				<!--表格-->
+				<!--中间态-->
+				<mobo-default-data  layout="Y" class="t-a-c c-999" ng-if="isShowDefauleFinanceAbnormamalGrid"></mobo-default-data>
+				<!--无数据-->
+				<mobo-no-data-text text="暂无数据" layout="Y" class="t-a-c c-999" 									ng-if="isShowNoDataIconFinanceAbnormamalGrid"></mobo-no-data-text>
+				<table class="table finance_abnormama" style="margin-bottom: 0;">
+					<thead>
+					</thead>
+						<tbody >
+							<tr ng-repeat="item in financeAbnormamalGridDataList track by $index"
+								ng-class="{'evenColor':($index > 0 && $index % 2 == 0),'finance_tr_fir':$index == 0}">
+								<td ng-repeat="itemSon in item.colum_list track by $index" 
+									ng-style="{'color': getColor($index,itemSon)}"
+									ng-class="{'f-z12' : $index  > 0 && $index == item.colum_list.length -1}"
+									ng-bind="itemSon"></td>
+							</tr>
+						</tbody>
+				</table>
+			</div>
+			<div class="m-t-30">
+				<div class="row" style="margin: 0;">
+					<div class="col-xs-12 border_e_all">
+						<!--中间态-->
+						<mobo-default-data  layout="Y" class="t-a-c c-999" ng-if="isShowDefaultRiskHighRunList"></mobo-default-data>
+						<!--无数据-->
+						<mobo-no-data-text text="暂无数据" layout="Y" class="t-a-c c-999" ng-if="isShowNoDataIconRiskHighRunList"></mobo-no-data-text>
+						<div class="capilat-title" ng-if="isShowHaveDataIconRiskHighRunList">
+							<span ng-bind="riskHighRunListTitle" class="ng-binding"></span>
+						</div>
+						<div ng-show="isShowHaveDataIconRiskHighRunList" id="risk_high_run" com-high-run-chart defer="comHighRunChartDeffer"></div>
+					</div>
+				</div>
+			</div>
+	</div>
+
+	<!--自由现金流预测 需求说先影藏这个-->
+	<div id="analysis_d" ng-if="">
+		<div class="cwfx_title">自由现金流预测</div>
+		<div class="cwfx_content content">
+			<img src="apps/images/analysis/yangli.png" alt="" class="hor-ver-center" />
+			<div class="row">
+				<div id="cwfx_chartb" style="padding-bottom: 30px;" class="col-xs-6 col-sm-6 col-md-6 p-l-0 p-r-0"></div>
+				<div class="scorediv col-xs-2 p-l-0 p-r-0 line-ellipsis-1">
+					<p>
+						<span class="scorespan">695<span class="fenspan">分</span></span>
+					</p>
+					<p class="scorep">财务风险预测得分</p>
+				</div>
+				<div class="col-xs-4 p-l-0 p-r-0">
+					<p class="f-z14 p-l-10">预估概述</p>
+					<p class="cwfx_gaishu_c  p-l-10 p-r-10 f-z13">
+						手机技术开发;手机生产、手机服务;(限海淀区永捷北路2号二层经营)从事互联网文化活动;技术开发;货物进出口、技术进出口、承办展览展示活动。
+					</p>
+					<p class="f-z14 p-l-10">预估偿还能力</p>
+					<p class="cwfx_gaishu_c back-f7f8fa p-l-10 p-r-10 f-z13">
+						1 手机技术开发;手机生产(限海淀区永捷北路2号二层经营)
+					</p>
+					<p class="cwfx_gaishu_c p-l-10 p-r-10 f-z13">
+						2 从事互联网文化活动;技术开发;货物进出口
+					</p>
+					<p class="cwfx_gaishu_c back-f7f8fa p-l-10 p-r-10 f-z13">
+						3 筹备经相关部门批准后已批准的内容开展经营活动不得从事本市产业政策禁止和限制类项目的经营活动。
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--行业盈利预测 需求说先影藏这个-->
+	<div id="analysis_e" ng-if="">
+		<div class="cwfx_title">行业盈利预测</div>
+		<div class="cwfx_content content">
+			<img src="apps/images/analysis/yangli.png" alt="" class="hor-ver-center" />
+			<div class="row">
+				<div id="cwfx_chartc" style="padding-bottom: 30px;" class="col-xs-6 p-l-0 p-r-0"></div>
+				<div class="scorediv col-xs-2 p-l-0 p-r-0 line-ellipsis-1">
+					<p>
+						<span class="scorespan">695<span class="fenspan">分</span></span>
+					</p>
+					<p class="scorep">财务风险预测得分</p>
+				</div>
+				<div class="col-xs-4 p-l-0 p-r-0">
+					<p class="f-z14 p-l-10">预估概述</p>
+					<p class="cwfx_gaishu_c  p-l-10 p-r-10 f-z13">
+						手机技术开发;手机生产、手机服务;(限海淀区永捷北路2号二层经营)从事互联网文化活动;技术开发;货物进出口、技术进出口、承办展览展示活动。
+					</p>
+					<p class="f-z14 p-l-10">预估偿还能力</p>
+					<p class="cwfx_gaishu_c back-f7f8fa p-l-10 p-r-10 f-z13">
+						1 手机技术开发;手机生产(限海淀区永捷北路2号二层经营)
+					</p>
+					<p class="cwfx_gaishu_c p-l-10 p-r-10 f-z13">
+						2 从事互联网文化活动;技术开发;货物进出口
+					</p>
+					<p class="cwfx_gaishu_c back-f7f8fa p-l-10 p-r-10 f-z13">
+						3 筹备经相关部门批准后已批准的内容开展经营活动不得从事本市产业政策禁止和限制类项目的经营活动。
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

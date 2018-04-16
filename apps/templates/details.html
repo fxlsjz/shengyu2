@@ -1,0 +1,14 @@
+<!--风险中点击详情的弹框-->
+<div class="cancel modal-backdrops fade" ng-if="detailsPlay"  ng-class="{'in':detailsPlay,'display-block':detailsPlay,'display-none':!detailsPlay}">
+	<div class="play-box" style="position: fixed;margin-top: -130px;">
+		<div class="tip">
+			<button class="closebtn" ng-click="noplayBox()"></button>
+		</div>
+		<p class="t-a-c p-t-20">暂未上线</p>
+		<p class="t-a-c p-t-20">
+			<span class="okplay" ng-click = "okplay()">ok</span>
+		</p>
+	</div>
+</div>
+<!-- 公用遮罩层  保存、加载... -->
+<div style="z-index:1002;opacity: 0;" ng-if="detailsPlay" class="modal-backdrop fade " ng-class="{'in': detailsPlay, 'display-block': detailsPlay, 'display-none':!detailsPlay}"></div>

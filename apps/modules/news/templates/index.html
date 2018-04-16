@@ -1,0 +1,69 @@
+
+<div ng-include="'apps/templates/content.html'"></div>
+
+<div class="news m-w-1400">
+	<div class="w220 fl contentleft">
+		<ul class="yijiul f-z16" ng-show = "yijiulshwo">
+			<li ng-click="changes(1,'pushmessages')" ng-class="{true:'active',false:''}[changeActive == 1]">
+				<span class="one"></span>推送消息
+			</li>
+			<li ng-click="changes(2,'operat')" ng-class="{true:'active',false:''}[changeActive == 2]">
+				<span class="two"></span>运营通知
+			</li>
+		</ul>
+		<div class="h-nav-b f-z12 t-a-c">
+			<p style="cursor: pointer;" class="h-nav-b-p" ui-sref="tabs.news.about" ng-class="{true:'state',false:''}[newsName == '/about']">关于胜遇</p>
+			<p style="cursor: pointer;" ui-sref="tabs.news.statement" ng-class="{true:'state',false:''}[newsName == '/statement']">法律声明</p>
+		</div>
+	</div>
+	<div class=" fr contentright" ng-show = "!yijiulshwo" ui-view="">
+		
+	</div>
+	<div class="row fr contentright" ng-show = "yijiulshwo">
+		<div id="pushmessages" class="col-xs-6">			
+			<div class="lantu">推送消息</div>	
+			<mobo-no-data text="暂无相关数据" layout="Y" class="t-a-c c-999" ng-if="newsOne && newsOne.length == 0"></mobo-no-data>
+			<ul class="newsList" ng-if="newsOne && newsOne.length != 0">
+				<li ng-click="boxAlert(item.content,item.content_type)" ng-repeat="item in newsOne">
+					<p class="newTitle">
+						<span ng-bind='item.info_time *1000 | date:"yyyy-MM-dd HH:mm"'></span>
+						<!--<span ng-bind='item.info_time'></span>-->
+						<span class="p-l-10"></span>
+						<span ng-bind="item.message_title"></span>
+					</p>
+					<p class="newTime" ng-bind='item.datetime *1000 | date:"yyyy-MM-dd HH:mm"'></p>
+					<!--<div class="newContent" ng-bind="item.abstract"></div>-->
+					<div class="newContent" ng-bind="item.content"></div>
+				</li>
+			</ul>
+			<div class="divFenye p-t-35 p-b-35" ng-if="newsOne && newsOne.length != 0">
+				<div  class="wrap-page">
+					<tm-pagination conf="paginationConf"></tm-pagination>
+				</div>
+			</div>	
+		</div>
+		<div id="operat" class="col-xs-6">
+			<div class="lantu">运营通知</div>	
+			<mobo-no-data text="暂无相关数据" layout="Y" class="t-a-c c-999" ng-if="newsTwo && newsTwo.length == 0"></mobo-no-data>
+			<ul class="noticeList" ng-if="newsTwo && newsTwo.length != 0">								
+				<li class="clearfix" ng-repeat="itemTwo in newsTwo">
+					<div class="fl noticeTime p-r-20" ng-bind='itemTwo.message_time *1000 | date:"yyyy-MM-dd HH:mm"'></div>
+					<div class="fl" style="width: calc(100% - 100px);">
+						<div class="noticeTitle">
+							<p ng-bind="itemTwo.message_title" class="line-ellipsis-1"></p>							
+						</div>
+						<div class="noticeContent">
+							<i></i>
+							<p ng-bind="itemTwo.message_content"></p>							
+						</p>
+					</div>
+				</li>
+			</ul>
+			<div class="divFenye" ng-if="newsTwo && newsTwo.length != 0">
+				<div  class="wrap-page">
+					<tm-pagination conf="temp"></tm-pagination>
+				</div>
+			</div>
+		</div>
+	</div>   
+</div>

@@ -1,0 +1,326 @@
+/*搜索框*/
+
+
+/*.financial #search{
+	width: 100%;
+	height: 98px;
+	background: #dfe5ed;
+	line-height: 98px;
+	text-align: center;
+}
+.financial .souSearch{
+	width: 700px;
+	height: 40px;
+	line-height: 40px;
+	background: #fff;
+	border-radius: 5px;
+	border: 1px solid #d6dbe3;
+	padding-left: 24px;
+	font-size: 14px;
+	vertical-align: middle;
+}
+.financial .searchGo{
+	width: 90px;
+	height: 38px;
+	background: #3355a3 url(../../../images/com_sousuo_icon.png) no-repeat 50% 50%;
+	display: inline-block;
+	vertical-align: middle;
+	border-radius: 5px;
+	margin-left: 14px;
+}*/
+
+.financial .frame {
+	border: 1px solid #E1E6EB;
+}
+
+.financial .p-20 {
+	padding: 20px;
+}
+
+
+/*搜索到的企业*/
+
+.financial .findCompany {
+	background: #fff;
+	border: 1px solid #e1e6eb;
+}
+
+.financial .findCompany .bigTop {
+	height: 105px;
+	line-height: 105px;
+}
+
+.financial .findCompany .bigTop .title {
+	padding-left: 30px;
+	padding-right: 55px;
+}
+
+
+/*.financial .findCompany .bigTop .icons span {
+	margin-right: 12px;
+	padding: 6px 14px;
+	border: 1px solid #d6dbe3;
+	border-radius: 4px;
+}*/
+
+.financial .findCompany .bigTop .classify {
+	margin-right: 40px;
+}
+
+.financial .findCompany .bigTop .classify span {
+	margin-right: 10px;
+	padding: 6px 14px;
+	border-radius: 4px;
+	background: #3355a3;
+	height: 34px;
+	display: inline-block;
+	line-height: 20px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.financial .findCompany .find_link {
+	padding: 0px 15px;
+}
+
+.financial .findCompany .find_link ol> li {
+	height: 43px;
+	line-height: 43px;
+	color: #666666;
+	background: #e7ebf2;
+}
+
+.financial .findCompany .find_link ol li p {
+	margin-bottom: 0px;
+}
+
+.financial .findCompany .find_link ul> li:nth-of-type(n) {
+	height: 61px;
+	line-height: 61px;
+	color: #39434e;
+	background: #fff;
+}
+
+.financial .findCompany .find_link ul> li:nth-of-type(2n) {
+	height: 53px;
+	line-height: 53px;
+	color: #39434e;
+	background: #f7f8fa;
+}
+
+.financial .findCompany .find_link ul li p {
+	margin-bottom: 0px;
+	padding: 0px;
+}
+
+.financial .findCompany .find_link ol li p {
+	margin-bottom: 0px;
+	padding: 0px;
+}
+
+.financial .findCompany .find_link ul li p:first-child {
+	padding-left: 60px;
+}
+
+.financial .findCompany .find_link ol li p:first-child {
+	padding-left: 60px;
+}
+
+.financial .findCompany .find_link ul li i.link_button {
+	background: url(../../../images/analysis/chakan_icon.png) no-repeat;
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	margin-right: 10px;
+	margin-bottom: -3px;
+}
+
+
+/*信用风险分析*/
+
+.financial .capilat-title {
+	text-align: center;
+	font-size: 16px;
+	margin: 0px 0 15px;
+}
+
+.financial .xyfxfxModular {
+	display: inline-block;
+	width: 50%;
+}
+
+.financial .xyfxfx-bg {
+	padding: 48px 25px 20px 25px;
+}
+
+.financial .xyfxfx-bg-two {
+	padding: 0 25px 20px 25px;
+}
+
+
+/*财务风险预测*/
+
+.financial .line-height-42 {
+	line-height: 42px;
+}
+
+
+/*财务风险预测*/
+
+.financial #analysis_c {
+	margin-top: 24px;
+}
+
+.financial #analysis_d {
+	margin-top: 24px;
+}
+
+.financial #analysis_e {
+	margin-top: 24px;
+}
+
+.cwfx_title {
+	position: absolute;
+	top: -6px;
+	background-image: url(../../../images/analysis/biaoti_bg.png);
+	width: 145px;
+	height: 35px;
+	text-align: center;
+	color: #fff;
+	line-height: 35px;
+	z-index: 97;
+}
+
+.cwfx_content {
+	padding: 48px 25px 20px 40px;
+	background: #fff;
+	border: 1px solid #e1e6eb;
+}
+
+.cwfx_content .scorediv {
+	padding: 3px 66px 0px 55px;
+}
+
+.cwfx_content .scorediv .scorespan {
+	font-size: 70px;
+	color: #595959;
+}
+
+.cwfx_content .scorediv .fenspan {
+	font-size: 26px;
+	color: #595959;
+}
+
+.cwfx_content .scorediv .scorep {
+	font-size: 20px;
+	color: #666666;
+}
+
+.cwfx_content .cwfx_gaishu {
+	padding-top: 35px;
+	padding-left: 10px;
+}
+
+.cwfx_content .cwfx_gaishu_c {
+	line-height: 25px;
+	color: #696d71;
+}
+
+.fengxian_fenxidiv {
+	padding: 0px;
+}
+
+.fengxian_fenxi {
+	border: 1px solid #e1e6eb;
+	margin-top: 7px;
+	background: #F7F8FA;
+	padding: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.fengxian_fenxi>div {
+	padding: 0px 55px;
+}
+
+.fengxian_fenxi .cwfx_fenxia {
+	font-size: 15px;
+	color: #777777;
+	padding-top: 34px;
+	padding-bottom: 15px;
+}
+
+.fengxian_fenxi .cwfx_fenxib .fenshu {
+	font-size: 50px;
+	color: #777777;
+	display: inline-table;
+}
+
+.fengxian_fenxi .cwfx_fenxib .fen {
+	font-size: 20px;
+	color: #777777;
+	display: inline-table;
+}
+
+.fengxian_fenxi .cwfx_fenxic {
+	font-size: 13px;
+	color: #696d71;
+	padding-bottom: 30px;
+	text-align: left;
+}
+
+.financial .hor-ver-center {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 387px;
+	height: 184px;
+	top: 50%;
+	left: 50%;
+	margin-left: -193px;
+	margin-top: -92px;
+	z-index: 10;
+}
+
+/*财务异常分析*/
+.financial .border_e_all{
+	border:1px solid #E1E6EB;
+	padding:20px;
+}
+.financial .finance_tr_fir{
+	background-color:#e7ebf2;
+	height:43px;
+	font-weight: bold;
+	font-size: 14px;
+	color:#666;
+}
+.financial .info {
+    padding-left: 16px;
+    background-color: #f8f8f8;
+    line-height: 42px;
+    margin-bottom: 20px;
+}
+.financial .finance_abnormama .evenColor{
+	background-color:#f7f8fa;
+	border:1px solid #eeeff1;
+	border-left:none;
+	border-right:none;
+}
+.financial .finance_abnormama.table>tbody>tr>td{
+	border:none;
+	vertical-align: middle;
+	font-size: 14px;
+}
+.financial .finance_abnormama.table>tbody>tr>td:first-child{
+	width:20%;
+}
+.financial .finance_abnormama.table>tbody>tr>td:last-child{
+	width:30%;
+}
+.financial .finance_tr_fir{
+	background-color:#e7ebf2;
+	height:43px;
+	font-weight: bold;
+	font-size: 14px;
+	color:#666;
+}

@@ -1,0 +1,9 @@
+/.project
+.idea/.name
+.idea/appwechat.iml
+.idea/encodings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
+/.idea
+/apps/js/env.js

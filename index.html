@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app="fundApp">
+<head>
+<!--<base href="http://59.110.25.138/twophaseweb/" />-->
+    <meta charset="utf-8">
+    <!--<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">-->
+    <base href="/">
+    <meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Expires" CONTENT="0">
+    <meta name="format-detection" content="telphone=no"/>
+    <title>胜遇</title>
+    <link href="apps/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="apps/lib/layui/css/layui.css" media="all">
+
+    <!-- common css -->
+    <link href="apps/css/common.css" rel="stylesheet">
+	<link href="apps/css/company.css" rel="stylesheet">
+
+ 	<script src="apps/js/plugins/My97DatePicker/WdatePicker.js"></script>
+
+    <script src="apps/lib/angular/angular.min.js"></script>  
+	<script src="apps/js/echarts.js"></script>
+    <script src="apps/lib/angular/angular-route.min.js"></script>
+    <!-- oclazyload -->
+    <script src="apps/lib/angular/angular-ui-router.min.js"></script>
+
+    <script src="apps/lib/oclazyload/dist/ocLazyLoad.min.js"></script>
+
+    <script src="apps/lib/angular/angular-cookies.min.js"></script>
+    <script src="apps/lib/layui/layui.js" charset="utf-8"></script>
+
+    <script src="apps/lib/tm.pagination.js"></script>
+ 	
+    <script src="apps/js/app.js"></script>
+    
+    <script src="apps/js/services.js"></script>
+	
+    <script src="apps/js/collection-module.js"></script><!--收藏-->
+    <script src="apps/js/analysisreport-module.js"></script> <!--分析报告-->
+    <script src="apps/js/analysis-module.js"></script>  <!--分析-->
+  	<script src="apps/js/nameList-module.js"></script><!--名单-->
+    <script src="apps/js/strategy-module.js"></script><!--策略-->
+    <script src="apps/js/news-module.js"></script><!--消息-->
+    <script src="apps/js/instruct-module.js"></script><!--使用说明-->
+    <script src="apps/js/accountset-module.js"></script><!--账户设置-->
+
+    <!--<script src='http://cdn.bootcss.com/socket.io/1.3.7/socket.io.js'></script>-->
+    <script src='apps/js/webscoket.js'></script>
+    <!--pdf-->
+    <script src='apps/lib/pagePdf/html2canvas.js'></script>
+    <script src='apps/lib/pagePdf/jspdf.debug.js'></script>
+    <!-- env js -->
+    <script src="apps/js/env.js"></script>
+    <!--百度统计-->
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?a7a6871ddbcc0cc871db17d4e9f2a5c4";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+
+    <!--//	百度统计 事件分析-->
+    <!--//	_hmt.push(['_trackEvent', category, action, opt_label, opt_value]);-->
+    <!--//-->
+    <!--//	category 	必选 	String 	要监控的目标的类型名称 	不填、填"-"的事件会被抛弃-->
+    <!--//	action 		必选 	String 	用户跟网页进行交互的动作名称 	不填、填"-"的事件会被抛弃-->
+    <!--//	opt_label 	可选 	String 	事件的一些额外信息 	不填、填"-"代表此项为空-->
+    <!--//	opt_value 	可选 	Number 	跟事件相关的数值-->
+
+</head>
+
+<body ng-class="{'overflow-hide': !bodyOverFlowIsAuto}" ng-controller="OuterController" oncontextmenu="return false" ondragstart="return false" onselectstart="return false" onselect="document.selection && document.selection.empty()"  oncopy="document.selection && document.selection.empty()" onbeforecopy="return false">
+	<div ui-view="" class="h100"></div>
+</body>
+</html>

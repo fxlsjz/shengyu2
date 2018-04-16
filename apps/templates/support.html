@@ -1,0 +1,15 @@
+<!--尽调支持弹框-->
+<div class="cancel modal-backdrops fade" ng-if="supportPlay"  ng-class="{'in':supportPlay,'display-block':supportPlay,'display-none':!supportPlay}">
+	<div class="play-box" style="position: fixed;margin-top: -130px;">
+		<div class="tip">
+			<button class="closebtn" ng-click="noplayBox()"></button>
+		</div>
+		<p class="t-a-c p-t-20">功能未开放请联系客服</p>
+		<p class="t-a-c c-3355a3">客服电话：400 888 8888</p>
+		<p class="t-a-c p-t-20">
+			<span class="okplay" ng-click = "noplayBox()">ok</span>
+		</p>
+	</div>
+</div>
+<!-- 公用遮罩层  保存、加载... -->
+<div style="z-index:1002;opacity: 0;" ng-if="supportPlay" class="modal-backdrop fade " ng-class="{'in': supportPlay, 'display-block': supportPlay, 'display-none':!supportPlay}"></div>

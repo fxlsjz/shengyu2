@@ -1,0 +1,50 @@
+
+<div ng-include="'apps/templates/errcodeBomb.html'"></div>
+
+<div class="loginT">	
+	<div class="h99">
+		<div class="wNav">
+			<div class="wLogo loginIma"></div>			
+		</div>
+	</div>
+	<div id="banner">
+		<div class="">
+			
+			<div class="fl loginImage">	
+				
+			</div>
+			<div class="fl" style="margin-left: 120px;">
+				<!--登录start-->
+				<div class="login">
+					<div class="f-z22 c-333 t-a-c">登<span></span>录</div>
+					<div class="p-t-32">
+						<!--<img src="../apps/images/denglu_yonghuming_icon2.png" alt="" />-->
+						<img src="apps/images/denglu_yonghuming_icon2.png" alt="" />
+						<input type="text" placeholder="用户名" class="users" name="text" ng-model="username" ng-required="true" ng-keyup="keyUpMy($event)">
+						
+					</div>
+					<div class="p-t-20">
+						<!--<img src="../apps/images/denglu_mima_icon2.png" alt="" />-->
+						<img src="apps/images/denglu_mima_icon2.png" alt="" />
+						<input type="password" placeholder="密码" class="passwords" ng-model="password.text" id="passwords" ng-keyup="keyUpMy($event)"/>
+					</div>		
+					<div class="remember">
+						<input type="checkbox" style="display: none;" value="" />
+			    		<div ng-class="{true:'u-check-cur',false:'u-check'}[checking]" style="top:50%;margin-top: -0.5em;" ng-click="check()"></div><!--u-check-cur-->
+			    		<p class="remuser">记住用户名</p>
+			    		<p class="forgive" ng-click="forgive()">忘记密码</p>
+					</div>
+					<div class="submits" ng-click="login()" >登<span></span>录</div>
+				</div>
+				<!--end-->
+			</div>
+			
+		</div>	
+		<div class="clear"></div>
+		
+	</div>
+	<div class="footer">
+		京ICP备17023522号-2
+	</div>
+</div>
+

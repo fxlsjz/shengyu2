@@ -1,0 +1,37 @@
+.analysis .yijiul li span{
+	width: 23px;
+	height: 18px;
+	display: inline-block;
+	margin-right: 12px;
+	margin-bottom: -3px;
+}
+.analysis .yijiul li span.one{
+	background: url(../../../images/analysis/fxgj_qiyegaikuang.png) no-repeat;	
+}
+.analysis .yijiul li.active span.one{
+	background: url(../../../images/analysis/fxgj_qiyegaikuang_pressed.png) no-repeat;	
+} 
+.analysis .yijiul li span.two{
+	background: url(../../../images/analysis/fxgj_caiwuyanjiu_icon.png) no-repeat;
+}
+.analysis .yijiul li.active span.two{
+	background: url(../../../images/analysis/fxgj_caiwuyanjiu_icon_pressed.png) no-repeat;
+}
+.analysis .yijiul li span.three{
+	background: url(../../../images/analysis/fxgj_guanlianfengxian_icon.png) no-repeat;
+}
+.analysis .yijiul li.active span.three{
+	background: url(../../../images/analysis/fxgj_guanlianfengxian_icon_pressed.png) no-repeat;	
+}
+.analysis .yijiul li span.four{
+	background: url(../../../images/analysis/fxgj_shijianyanjiu_icon.png) no-repeat;
+}
+.analysis .yijiul li.active span.four{
+	background: url(../../../images/analysis/fxgj_shijianyanjiu_icon_pressed.png) no-repeat;	
+}
+.analysis .yijiul li span.five{
+	background: url(../../../images/analysis/fxgj_fengxianmoshi_icon.png) no-repeat;
+}
+.analysis .yijiul li.active span.five{
+	background: url(../../../images/analysis/fxgj_fengxianmoshi_icon_pressed.png) no-repeat;	
+}

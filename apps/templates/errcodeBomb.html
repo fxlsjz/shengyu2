@@ -1,0 +1,14 @@
+<!--尽调支持弹框-->
+<div class="cancel modal-backdrops fade" ng-show="errcodeBomb"  ng-class="{'in':errcodeBomb,'display-block':errcodeBomb,'display-none':!errcodeBomb}">
+	<div class="play-box" style="position: fixed;margin-top: -130px;">
+		<div class="tip">
+			<button class="closebtn" ng-click="noBomb()"></button>
+		</div>
+		<p class="t-a-c p-t-40" ng-bind="errcodeText"></p>
+		<p class="t-a-c p-t-40">
+			<span class="okplay" ng-click = "okBomb()">ok</span>
+		</p>
+	</div>
+</div>
+<!-- 公用遮罩层  保存、加载... -->
+<div style="z-index:1002;opacity: 0;" ng-show="errcodeBomb" class="modal-backdrop fade " ng-class="{'in': errcodeBomb, 'display-block': errcodeBomb, 'display-none':!errcodeBomb}"></div>

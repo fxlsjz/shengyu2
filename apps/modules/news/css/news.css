@@ -1,0 +1,150 @@
+
+
+/*左边样式*/
+.news .yijiul li span{
+	width: 18px;
+	height: 15px;
+	display: inline-block;
+	margin-right: 12px;
+}
+.news .yijiul li span.one{
+	background: url(../../../images/news/tuisongxiaoxi_icon.png) no-repeat;	
+}
+.news .yijiul li span.two{
+	background: url(../../../images/news/yongyingtongzhi_icon.png) no-repeat;
+}
+.news .yijiul li.active span.one{
+	background: url(../../../images/news/tuisongxiaoxi_icon_pressed.png) no-repeat;	
+} 
+.news .yijiul li.active span.two{
+	background: url(../../../images/news/yongyingtongzhi_icon_pressed.png) no-repeat;	
+}
+
+/*分页*/
+.news .wrap-page {
+    left: 0;
+}
+.news .wrap-page .page-list {
+    left: 0;
+    display: inline-block;
+}
+.news .divFenye{
+	text-align: center;
+	font-size: 12px;
+	color: #949494;
+}
+.news .divFenye .fenye li{
+	display: inline-block;
+	border: 1px solid #ecedee;
+	margin-right: 6px;
+	padding: 4px 8px;
+	border-radius: 3px;
+	cursor: pointer;
+}
+.news .divFenye .fenye li:hover{
+	background: #e7ebf2;
+}
+
+/*推送消息*/
+/*.news #pushmessages{
+	background: #fff;
+	border: 1px solid #e1e6eb;
+}*/
+.news #pushmessages .divFenye{
+	/*border: 1px solid #e1e6eb;*/
+	/*border-top: none;*/
+	background: #fff;
+}
+.news #pushmessages .lantu{
+	left: 30px;
+}
+.news .lantu{
+	position: absolute;
+	background: url(../../../images/biaoti_bg.png) no-repeat;
+	width: 145px;
+	height: 35px;
+	top: -6px;
+	text-align: center;
+	color: #fff;
+	line-height: 35px;
+	z-index: 2;
+}
+.news #pushmessages .newsList{
+	padding: 60px 68px 0;
+	background: #fff;
+	/*border: 1px solid #e1e6eb;*/
+	border-bottom: none;
+}
+.news #pushmessages .newsList li{
+	border-bottom: 1px solid #e1e6eb;
+	padding-top: 28px;
+	cursor: pointer;
+}
+.news #pushmessages .newsList .newTitle{
+	margin: 0;
+	font-size: 16px;
+	/*color: #3355a3;*/
+	padding-bottom: 25px;
+}
+.news #pushmessages .newsList .newTime{
+	margin: 0;
+	font-size: 12px;
+	color: #bbb;
+	padding-bottom: 10px;
+}
+.news #pushmessages .newsList .newContent{
+	margin: 0;
+	font-size: 13px;
+	color: #666;
+	padding-bottom: 30px;
+	line-height: 24px;
+}
+
+/*运营通知*/
+.news #operat{
+	background: #fff;
+	/*border: 1px solid #e1e6eb;*/
+}
+.news #operat .noticeList{
+	padding: 80px 55px 0px;
+}
+.news #operat .noticeList .noticeTime{
+	font-size: 14px;
+	color: #888;
+	/*background: url(../../../images/news/shijianzhou_yuan.png) no-repeat right center;*/
+	width: 100px;
+	text-align: center;
+}
+.news #operat .noticeList .noticeTitle{
+	font-size: 16px;
+	/*background: #e7ebf2;*/
+	padding-left: 20px;
+	/*margin-left: 18px;*/
+	background: url(../../../images/news/shijianzhou_xian.png) repeat-y left;
+}
+.news #operat .noticeList li:nth-of-type(1) .noticeTitle{
+	background:none;
+}
+.news #operat .noticeList .noticeTitle p{
+	background: #e7ebf2;
+	padding-left: 18px;
+	margin-bottom: 0;
+}
+.news #operat .noticeList .noticeContent{
+	font-size: 13px;
+	color: #888;
+	padding: 15px 0px 50px 38px;	
+	background: url(../../../images/news/shijianzhou_xian.png) repeat-y left;
+}
+.news #operat .noticeList .noticeContent i{
+	width: 12px;
+	height: 12px;
+	display: inline-block;
+	background: url(../../../images/news/shijianzhou_yuan.png) no-repeat;
+	position: absolute;
+	top: -12px;
+	left: 0;
+}
+.news #operat .noticeList .noticeContent p{
+	margin-bottom: 0;
+}

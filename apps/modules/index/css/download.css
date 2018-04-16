@@ -1,0 +1,16 @@
+.iconp{
+	background: url(../../../images/180.png) no-repeat 50%;
+	height: 180px;
+	margin-top: 30%;
+}
+.loadbutton{
+	background: #4766ac;
+	border: 0;
+	width: 50%;
+	font-size: 2em;
+	border-radius: 100px;
+	margin-top: 20%;
+}
+.loadbutton a{
+	color: #FFF;
+}

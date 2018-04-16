@@ -1,0 +1,48 @@
+
+<div ng-include="'apps/templates/errcodeBomb.html'"></div>
+
+<div class="forgiveT">
+	
+	<div class="h99">
+		<div class="wNav">
+			<div class="wLogo loginIma"></div>			
+		</div>
+	</div>
+	<div id="banner">
+		<div class="">
+			<div class="fl loginImage">	
+				
+			</div>
+			<div class="fl" style="margin-left: 120px;">
+				<!--忘记密码start-->
+				<div class="login forgivebg">
+					<div class="f-z22 c-333 t-a-c">修改密码</div>
+					<div class="p-t-32">
+						<!--<img src="../apps/images/dl_shoujihao_icon2.png" alt="" />-->
+						<img src="apps/images/dl_shoujihao_icon2.png" alt="" />
+						<input type="text" placeholder="手机号"/ class="users" id="users" ng-model="users" ng-required="true" ng-keyup="keyUpForgive($event)">
+					</div>
+					<div class="p-t-20">
+						<!--<img src="../apps/images/dl_yanzhengma_icon.png" alt="" />-->
+						<img src="apps/images/dl_yanzhengma_icon.png" alt="" />
+						<input type="text" placeholder="验证码" class="passwords" ng-model="passwords" ng-keyup="keyUpForgive($event)"/>
+						<p class="gets" ng-click="gets()" ng-bind="code"></p>
+					</div>
+					<div class="p-t-20">
+						<input type="password" placeholder="重置密码（不少于8位，含数字和字母）" class="passwords reset" id="pass" ng-model="pass" ng-keyup="keyUpForgive($event)"/>
+					</div>
+					<div class="p-t-20">
+						<input type="password" placeholder="确认密码" class="passwords reset" id="resetpass" ng-model="resetpass" ng-keyup="keyUpForgive($event)"/>
+					</div>		
+					<div class="submits" ng-click="submits()">确<span></span>定</div>
+				</div>
+				<!--end-->
+			</div>
+			
+		</div>		
+	</div>
+	<div class="footer">
+		@Copyright 2007-2016 cyzone.cn All rights reserved Beijing ICP certificate 070362 number
+	</div>
+
+</div>

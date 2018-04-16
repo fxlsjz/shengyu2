@@ -1,0 +1,14 @@
+<!--尽调支持弹框-->
+<div class="cancel modal-backdrops fade" ng-if="tip"  ng-class="{'in':tip,'display-block':tip,'display-none':!tip}">
+	<div class="play-box" style="position: fixed;margin-top: -130px;">
+		<div class="tip">
+			<button class="closebtn" ng-click="newClose();newCloseTwo()"></button>
+		</div>
+		<p class="t-a-c p-t-20" ng-bind="tipTxt"></p>
+		<p class="t-a-c p-t-20">
+			<span class="okplay" ng-click = "newClose();newCloseTwo()">ok</span>
+		</p>
+	</div>
+</div>
+<!-- 公用遮罩层  保存、加载... -->
+<div style="z-index:1002;opacity: 0;" ng-if="tip" class="modal-backdrop fade " ng-class="{'in': tip, 'display-block': tip, 'display-none':!tip}"></div>

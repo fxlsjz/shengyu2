@@ -1,0 +1,122 @@
+
+	<!--点击尽调支持-->
+	<!--<div ng-include="'apps/templates/support.html'"></div>-->
+	<!--点击监控-->
+	<!--<div ng-include="'apps/templates/addMonitor.html'"></div>-->
+	<!--点击+收藏-->
+	<!--<div ng-include="'apps/templates/addCollect.html'"></div>-->
+	<!--+黑名单-->
+	<!--<div ng-include="'apps/templates/addBlack.html'"></div>-->
+	<!--点击删除-->
+	<!--<div ng-include="'apps/templates/nobomb.html'"></div>-->
+	<!--重命名-->
+	<!--<div ng-include="'apps/templates/rename.html'"></div>-->	
+	<!--提示-->
+	<div ng-include="'apps/templates/tip.html'"></div>
+	<div class="wrap-search">
+		<div id="findCompany" class="findCompany m-t-20" >
+			<div class="lantu">工商简况</div>
+			<!--如果接口报错，所有灯都是灰色-->
+			<div class="bigTop" ng-if="unWaring">
+		
+						<div class="title fl c-3355a3 f-z24 line-ellipsis-1" ng-bind="$_userSearchData.companyName"></div>
+						<div class="classify fr f-z14 c-fff" >
+							<!--<span class="classifyOne" ng-click="supportColl()">尽调支持</span>-->
+							<span class="classifyTwo" ng-click="joinMonitorC()">+监控</span>
+							<span class="classifyThree" ng-click="joinCollectC()">+收藏</span>
+							<span class="classifyFour" ng-click="joinBlackC()">+黑名单</span>
+							<span class="classifyFour" ng-if="info_red != 0" ng-click="joinRedC()">+红名单</span>
+						</div>
+						<div class="icons fr f-z14" >
+							<div class="dis_inline_block">
+								<i class="gray_warning_icon" ></i>
+								<span class="c-818594">策略预警</span>
+							</div>
+							<div class="dis_inline_block">
+								<i class="gray_warning_icon"></i>
+								<span class=" c-818594" >人工预警</span>
+							</div>
+							
+							<div class="dis_inline_block">
+								<i class="gray_warning_icon"></i>
+								<span class=" c-818594">违约报警</span>
+							</div>
+						</div>
+				</div>
+			<div class="bigTop" ng-if="$_userSearchData.searchKey && !unWaring">
+				<div class="title fl c-3355a3 f-z24 line-ellipsis-1" ng-bind="$_userSearchData.companyName"></div>
+				<div class="classify fr f-z14 c-fff" ng-show="$_userSearchData.searchKey">
+					<!--<span class="classifyOne" ng-click="supportColl()">尽调支持</span>-->
+					<span class="classifyTwo" ng-click="joinMonitorC()">+监控</span>
+					<span class="classifyThree" ng-click="joinCollectC()">+收藏</span>
+					<span class="classifyFour" ng-click="joinBlackC()">+黑名单</span>
+					<span class="classifyFour" ng-if="info_red != 0" ng-click="joinRedC()">+红名单</span>
+				</div>
+				<div class="icons fr f-z14" >
+					<div class="dis_inline_block">
+						<i class="gray_warning_icon" ng-class="{'iconOne': $_collection.is_strategy=='1'}"></i>
+						<span class="c-818594">策略预警</span>
+					</div>
+					<div class="dis_inline_block">
+						<i class="gray_warning_icon" ng-class="{'iconTwo':$_collection.is_warning=='1'}"></i>
+						<span class=" c-818594" >人工预警</span>
+					</div>
+					
+					<div class="dis_inline_block">
+						<i class="gray_warning_icon" ng-class="{'iconThree':$_collection.is_risk=='1'}"></i>
+						<span class=" c-818594">违约报警</span>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>		
+			<div class="no-data back-fff t-a-c"  ng-if="!$_userSearchData.searchKey">
+						<dl style="display: inline-block;">
+						<dd>请搜索或选择企业</dd>
+						</dl>
+					</div>
+			<div class="bigShuju row" ng-show="$_userSearchData.searchKey">
+						<ul class="col-xs-6">
+							<li>
+								<span>统一社会信用代码</span>
+								<!--<span ng-bind="collectionPresent.credit_code"></span>-->
+								<span  ng-if="$_userSearchData.searchKey && datailConIcon" ng-bind="$_userSearchData.creditCode"></span>
+								<span ng-if="$_userSearchData.searchKey && !datailConIcon && $_colCompanyDatails.company_name" >--</span>
+							</li>
+							<li>
+								<span>名称</span>
+								<span ng-bind="$_colCompanyDatails.company_name"></span>
+							</li>
+							<li>
+								<span>法定代表人</span>
+								<span ng-bind="$_colCompanyDatails.representative"></span>
+							</li>
+							<li>
+								<span>成立日期</span>
+								<span ng-bind="$_colCompanyDatails.establish_time"></span>
+							</li>
+							<li class="row" style="padding-left: 20px;">
+								<span class="col-xs-5" style="margin-right: 0;">住所</span>
+								<span class="col-xs-7" style="padding: 10px 28px 10px 30px " ng-bind="$_colCompanyDatails.address"></span>
+							</li>
+						</ul>
+						<ul class="col-xs-6">
+							<li>
+								<span>注册号</span>
+								<!--<span ng-bind="collectionPresent.company_code"></span>-->
+								<span ng-if="$_userSearchData.searchKey && datailConIcon" ng-bind="$_userSearchData.companyCode"></span>
+								<span ng-if="$_userSearchData.searchKey && !datailConIcon && $_colCompanyDatails.company_name" >--</span>
+							</li>
+							<li>
+								<span>类型</span>
+								<span ng-bind="$_colCompanyDatails.company_type"></span>
+							</li>
+							<li>
+								<span>注册资本</span>
+								<span ng-bind="$_colCompanyDatails.registered_capital"></span>
+							</li>
+							
+						</ul>
+					</div>
+		</div>
+	</div>
+	

@@ -1,0 +1,17 @@
+<!--批量收藏弹窗-->
+<div id="showBatchCollectionView" ng-if="isShowBatchCollection">
+    <!-- 遮罩-->
+    <div style="z-index:19999;opacity: 0;" class="modal-backdrop fade"></div>
+    <!--弹窗内容-->
+    <div style="z-index:20000;position: fixed;margin-top: -130px;" class="play-box">
+        <div class="tip">
+            <button class="closebtn" ng-click="closeBatchCollectionView()"></button>
+        </div>
+        <textarea class="tip-content" type="text" ng-model="batchCollectComName.text" ng-trim="false"></textarea>
+        <p class="tip-content-p">请输入企业名称或code,用逗号分隔</p>
+        <p class="t-a-c">
+            <span class="okplay" ng-click = "tipConfirm()">ok</span>
+        </p>
+    </div>
+
+</div>

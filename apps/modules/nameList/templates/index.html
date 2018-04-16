@@ -1,0 +1,181 @@
+
+<div class="nameList m-w-1400 clearfix">
+	<!--点击尽调支持-->
+	<div ng-include="'apps/templates/support.html'"></div>
+	<!--点击监控-->
+	<div ng-include="'apps/templates/addMonitor.html'"></div>
+	<!--点击+收藏-->
+	<div ng-include="'apps/templates/addCollect.html'"></div>
+	<!--+黑名单-->
+	<div ng-include="'apps/templates/addBlack.html'"></div>
+	<!--+红名单-->
+	<div ng-include="'apps/templates/addRed.html'"></div>
+	<!--点击删除-->
+	<div ng-include="'apps/templates/nobomb.html'"></div>
+	<!--重命名-->
+	<div ng-include="'apps/templates/rename.html'"></div>	
+	<!--提示-->
+	<div ng-include="'apps/templates/tip.html'"></div>
+	
+	<div class="w220 fl contentleft">
+		<ul class="yijiul f-z16" ng-show = "yijiulshwo">
+			<li ng-click="changes(1,'search')" ng-class="{true:'active',false:''}[changeActive == 1]">
+				<span class="one"></span>查找企业
+			</li>
+			<li ng-click="changes(2,'blacklist')" ng-class="{true:'active',false:''}[changeActive == 2]">
+				<span class="two"></span>黑名单
+			</li>
+			<li ng-click="changes(3,'blackGuanli')" ng-class="{true:'active',false:''}[changeActive == 3]">
+				<span class="four"></span>黑名单管理
+			</li>
+			<li ng-click="changes(4,'redlist')" ng-class="{true:'active',false:''}[changeActive == 4]">
+				<span class="three"></span>红名单
+			</li>
+			<li ng-click="changes(5,'redGuanli')" ng-class="{true:'active',false:''}[changeActive == 5]">
+				<span class="four"></span>红名单管理
+			</li>
+		</ul>
+		<div class="h-nav-b f-z12 t-a-c">
+			<p style="cursor: pointer;" class="h-nav-b-p" ui-sref="tabs.nameList.about" ng-class="{true:'state',false:''}[nameListName == '/about']">关于胜遇</p>
+			<p style="cursor: pointer;" ui-sref="tabs.nameList.statement" ng-class="{true:'state',false:''}[nameListName == '/statement']">法律声明</p>
+		</div>
+	</div>
+	<div class=" fr contentright" ng-show = "!yijiulshwo" ui-view="">
+		
+	</div>
+	<div class=" fr contentright" ng-show = "yijiulshwo">
+		<div ng-controller="analyComCtrl"><!---->
+			<div ng-include="'apps/modules/analysis/templates/analysis-common.html'"></div>
+			<div ng-include="'apps/templates/company.html'"></div>
+		</div>
+		<!--黑名单-->
+		<div id="blacklist" class="m-t-30">
+			<div class="lantu">黑名单</div>
+			<div class="selects p-t-40 p-l-30" id='jumpHighBlacklist'>	
+				<select class="sexs fl" ng-model='nameBlack' ng-change="nameS(nameBlack)" ng-options="x.display_name as x.display_name for x in blackListName">
+                </select>
+                <div class="classify fr f-z14 c-fff">
+					<span class="classifyTwo" ng-click="delectBlackSelect()">删除选中</span>
+				</div>
+                <div class="clear"></div>
+			</div>
+			<mobo-no-data text="暂无相关数据" layout="Y" class="t-a-c c-999" ng-if="blackListCounts == 0"></mobo-no-data>
+			<ul class="shouCounts" ng-if="blackListCounts != 0">
+				<li class="row back-e5ecf1">
+					<div class=" p-l-30 line-ellipsis-1 col-xs-10">企业名称</div>					
+					<div class="col-xs-2 p-l-0 f-z13 t-a-r p-r-50" style="line-height: 50px;" ng-if="blackListCounts != 0">
+		    			<div  style="display: inline-block;" ng-click="checkAllBlack()" ng-class="{true:'check-cur',false:'check'}[checks]"  ng-if="blackListCounts != 0"></div>
+		    			全选
+					</div>
+				</li>
+			</ul>
+			<ul class="shouCounts p-t-0" ng-if="blackListCounts != 0">
+				<li class="row" ng-repeat="blackListS in blackList">
+					<div class=" p-l-30 line-ellipsis-1 col-xs-10" ng-bind="blackListS.company_name" ng-click="reSearch(blackListS.company_name)" style="cursor: pointer;"></div>					
+					<div class="col-xs-2 p-l-0 f-z13 t-a-r p-r-50" style="line-height: 50px;">
+		    			<div  class="check" style="display: inline-block;" ng-click="checkBlackList(blackListS,$index)" ng-class="{'check-cur':blackListS.$selected == true}"></div>
+		    			选择
+					</div>
+				</li>
+			</ul>
+			<div class="divFenye" ng-if="blackListCounts != 0">
+				<div  class="wrap-page">
+					<tm-pagination conf="paginationBlack"></tm-pagination>
+				</div>
+			</div>
+		</div>
+		<div id="blackGuanli">
+			<div class="lantu">黑名单管理</div>
+			<div class="p-t-40">
+				<div class="setupAll row m-l-0 m-r-0">
+					<div class="col-xs-1 p-l-0">
+						<span class="setup" ng-click="setupBlack()">创建</span>
+					</div>
+					<div class="col-xs-10 p-l-0">
+						<input type="" name="" id="" value="" placeholder="请输入要创建组别名称" class="setSearch m-l-0" ng-model="fileNameBlack"/>
+					</div>
+					<div class="col-xs-1 p-l-0 p-r-0">
+						<!--<div class="f-z13 m-r-0" style="display: inline-block;">删除</div>-->
+					</div>															
+				</div>
+			</div>
+			<mobo-no-data text="暂无相关数据" layout="Y" class="t-a-c c-999" ng-if="blackAllCounts == 0"></mobo-no-data>
+			<ul style="padding-bottom: 51px;">
+				<li class="row m-l-0 m-r-0" ng-repeat="itemName in blackListName">
+					<div class="col-xs-1 p-l-0"><span class="rename" ng-click="renameBlack(itemName.set_id)">重命名</span></div>
+					<div class="col-xs-9 p-l-0">
+						<span class="f-z14 line-ellipsis-1" ng-bind="itemName.display_name"></span>
+					</div>
+					<div class="col-xs-2 p-l-0 p-r-0 t-a-r">
+						<div class="f-z13" style="display: inline-block;" ng-click="delectBlack(itemName.set_id)">删除</div>
+					</div>															
+				</li>
+			</ul>
+		</div>
+		<!--红名单-->
+		<div id="redlist" class="m-t-30">
+			<div class="lantu">红名单</div>
+			<div class="selects p-t-40 p-l-30" id='jumpHighRedlist'>
+				<select class="sexs fl" ng-model='nameRed' ng-change="nameReds(nameRed)" ng-options="y.display_name as y.display_name for y in redListName">
+                </select>
+                <div class="classify fr f-z14 c-fff">
+					<span class="classifyTwo" ng-click="delectRedSelect()">删除选中</span>
+				</div>
+                <div class="clear"></div>
+			</div>
+			<mobo-no-data text="暂无相关数据" layout="Y" class="t-a-c c-999" ng-if="redListCounts == 0"></mobo-no-data>
+			<ul class="shouCounts" ng-if="redListCounts != 0">
+				<li class="row back-e5ecf1">
+					<div class=" p-l-30 line-ellipsis-1 col-xs-10">企业名称</div>					
+					<div class="col-xs-2 p-l-0 f-z13 t-a-r p-r-50" style="line-height: 50px;" ng-if="redListCounts != 0">
+		    			<div  style="display: inline-block;" ng-click="checkAllRed()" ng-class="{true:'check-cur',false:'check'}[checksRed]"  ng-if="redListCounts != 0"></div>
+		    			全选
+					</div>
+				</li>
+			</ul>
+			<ul class="shouCounts p-t-0" ng-if="redListCounts != 0">	
+				<li class="row" ng-repeat="redListS in redList">
+					<div class=" p-l-30 line-ellipsis-1 col-xs-10" ng-bind="redListS.company_name" ng-click="reSearch(redListS.company_name)" style="cursor: pointer;"></div>					
+					<div class="col-xs-2 p-l-0 f-z13 t-a-r p-r-50" style="line-height: 50px;">
+		    			<!--<div  style="display: inline-block;" ng-click="checkMonitor()" ng-class="{true:'check-cur',false:'check'}[checkMonitorS]"></div>-->
+		    			<div  class="check" style="display: inline-block;" ng-click="checkRedList(redListS,$index)" ng-class="{'check-cur':redListS.$selected == true}"></div>
+		    			选择
+					</div>
+				</li>
+			</ul>
+			<div class="divFenye" ng-if="redListCounts != 0">
+				<div  class="wrap-page">
+					<tm-pagination conf="paginationRed"></tm-pagination>
+				</div>
+			</div>
+		</div>
+		<div id="redGuanli">
+			<div class="lantu">红名单管理</div>
+			<div class="p-t-40">
+				<div class="setupAll row m-l-0 m-r-0">
+					<div class="col-xs-1 p-l-0">
+						<span class="setup" ng-click="setupRed()">创建</span>
+					</div>
+					<div class="col-xs-10 p-l-0">
+						<input type="" name="" id="" value="" placeholder="请输入要创建组别名称" class="setSearch" ng-model="fileNameRed"/>
+					</div>
+					<div class="col-xs-1 p-l-0 p-r-0">
+						<!--<div class="f-z13 m-r-0" style="display: inline-block;">删除</div>-->
+					</div>															
+				</div>
+			</div>
+			<mobo-no-data text="暂无相关数据" layout="Y" class="t-a-c c-999" ng-if="redAllCounts == 0"></mobo-no-data>
+			<ul style="padding-bottom: 51px;">
+				<li class="row m-l-0 m-r-0" ng-repeat="redName in redListName">
+					<div class="col-xs-1 p-l-0"><span class="rename" ng-click="renameRed(redName.set_id)">重命名</span></div>
+					<div class="col-xs-9 p-l-0">
+						<span class="f-z14 line-ellipsis-1" ng-bind="redName.display_name"></span>
+					</div>
+					<div class="col-xs-2 p-l-0 p-r-0 t-a-r">
+						<div class="f-z13" style="display: inline-block;" ng-click="delectRed(redName.set_id)">删除</div>
+					</div>															
+				</li>
+			</ul>
+		</div>
+	</div> 
+</div>

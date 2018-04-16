@@ -1,0 +1,18 @@
+<!--弹出监控框-->
+<div class="cancel modal-backdrops fade" ng-if="addblackPlay"  ng-class="{'in':addblackPlay,'display-block':addblackPlay,'display-none':!addblackPlay}">
+	<div class="play-box" style="position: fixed;margin-top: -130px;">
+		<div class="tip">
+			<button class="closebtn" ng-click="noplayBox()"></button>
+		</div>
+		<div class="selects t-a-c p-t-40">
+			<select class="sexs f-z13 c-9ea4ab" ng-model='addBlackLists' ng-change="addBlacks(addBlackLists)" ng-options="v.display_name as v.display_name for v in blackListName">
+          	</select>
+		</div>
+		<div class="t-a-c p-t-25">
+			<span class="okplay" ng-click = "okplayBlack(addBlackLists)">是</span>
+			<span class="noplay m-l-20" ng-click = "noplayBox()">否</span>
+		</div>
+	</div>
+</div>
+<!-- 公用遮罩层  保存、加载... -->
+<div style="z-index:1002;opacity: 0;" ng-if="addblackPlay" class="modal-backdrop fade " ng-class="{'in': addblackPlay, 'display-block': addblackPlay, 'display-none':!addblackPlay}"></div>

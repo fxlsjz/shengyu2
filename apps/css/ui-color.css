@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+/*字体颜色*/
+.c-fff{
+	color:#fff;
+}
+.c-333{
+	color:#333;
+}
+.c-666{
+	color:#666;
+}
+.c-999{
+	color:#999;
+}
+.c-b3b7c0{
+	color: #b3b7c0;
+}
+.c-3355a3{
+	color: #3355a3;
+}
+.c-818594{
+	color: #818594;
+}
+.c-9ea4ab{
+	color: #9ea4ab;
+}
+/*背景颜色*/
+.back-29323f{
+	background-color: #29323f;
+}
+.back-eeeff1{
+	background-color: #eeeff1;
+}
+.back-313c48{
+	background-color: #313c48;
+}
+.back-2c3742{
+	background-color: #2c3742;
+}
+.back-e5ecf1{
+	background-color: #e5ecf1;
+}
+.back-f7f8fa{
+	background-color: #f7f8fa;
+}
+.back-fff{
+	background-color: #fff;
+}
+/*线条颜色*/
+.bor-b-29323f{
+	border-bottom: 1px solid #29323f;
+}
+.bor-b-eeeff1{
+	border-bottom: 1px solid #eeeff1;
+}
+.bor-r-e1e6eb{
+	border-right: 1px solid #e1e6eb;
+}
+
+.bor-r-d7{
+	border-right: 1px solid #D7D7D7;
+}
+.bor-t-d7{
+	border-top: 1px solid #D7D7D7;
+}

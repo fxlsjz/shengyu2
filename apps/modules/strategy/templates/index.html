@@ -1,0 +1,25 @@
+
+<div class="strategy m-w-1400 clearfix">
+	<div class="w220 fl contentleft">
+		<ul class="yijiul f-z16" ng-show = "yijiulshwo">
+			<li ng-click="changes(1,'system')" ng-class="{true:'active',false:''}[changeActive == 1]"><span class="one"></span>系统策略</li>
+			<li ng-click="changes(2,'system')" ng-class="{true:'active',false:''}[changeActive == 2]"><span class="two"></span>自建策略</li>
+		</ul>
+		<div class="h-nav-b f-z12 t-a-c">
+			<p style="cursor: pointer;" class="h-nav-b-p" ui-sref="tabs.strategy.about" ng-class="{true:'state',false:''}[strategyName == '/about']">关于胜遇</p>
+			<p style="cursor: pointer;" ui-sref="tabs.strategy.statement" ng-class="{true:'state',false:''}[strategyName == '/statement']">法律声明</p>
+		</div>
+	</div>
+	<div class=" fr contentright" ng-show = "!yijiulshwo" ui-view="">
+		
+	</div>
+	<div class="fr contentright bejingTu" style="" ng-show = "yijiulshwo">
+		<div id="system">
+			<div class="bg-img">
+				<div></div>
+				<!--<span></span>-->策略系统中心尚未对外开放
+			</div>
+		</div>
+		<div id="system"></div>
+	</div>    
+</div>

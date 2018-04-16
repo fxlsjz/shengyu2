@@ -1,0 +1,232 @@
+/*搜索框*/
+/*.enterprise #search{
+	width: 100%;
+	height: 98px;
+	background: #dfe5ed;
+	text-align: center;
+}
+.enterprise .searchCenter .sertip{
+	color:red;
+}
+.enterprise .souSearch{
+	width: 700px;
+	height: 40px;
+	line-height: 40px;
+	background: #fff;
+	border-radius: 5px;
+	border: 1px solid #d6dbe3;
+	padding-left: 24px;
+	font-size: 14px;
+	vertical-align: middle;
+}
+.enterprise .searchGo{
+	width: 90px;
+	height: 38px;
+	background: #3355a3 url(../../../images/com_sousuo_icon.png) no-repeat 50% 50%;
+	display: inline-block;
+	vertical-align: middle;
+	border-radius: 5px;
+	margin-left: 14px;
+}*/
+/*搜索到的企业*/
+.enterprise .findCompany{
+	background: #fff;
+	border: 1px solid #e1e6eb;
+}
+.enterprise .findCompany .bigTop{
+	height: 105px;
+	line-height: 105px;
+}
+.enterprise .findCompany .bigTop .title{
+	padding-left: 30px;
+	padding-right: 55px;
+}
+.enterprise .findCompany .bigTop .icons span{
+	/*margin-right: 12px;
+	padding:6px 14px;
+	border: 1px solid #d6dbe3;
+	border-radius: 4px;*/
+}
+.enterprise .findCompany .bigTop .classify{
+	margin-right: 40px;
+}
+
+.enterprise .findCompany .bigTop .classify span{
+	margin-right: 10px;
+	padding:6px 14px;
+	border-radius: 4px;
+	background: #3355a3;
+	height: 34px;
+	display: inline-block;
+	line-height: 20px;
+	text-align: center;
+	cursor: pointer;
+}
+.enterprise .findCompany .bigTop .classify span.moren{
+	border: 1px solid #e1e6eb;
+    background: none;
+    color: #818594;
+}
+
+/*研究概况内容*/
+.enterprise #analysis_a{
+	background: #fff;
+	border: 1px solid #e1e6eb;
+	margin-top: 24px;
+}
+.enterprise .yjgk_title{
+	position: absolute;
+    top: -6px;
+    background-image: url(../../../images/analysis/biaoti_bg.png);
+    width: 145px;
+    height: 35px;
+    text-align: center;
+    color: #fff;
+    line-height: 35px;
+}
+#analysis_a .yjgk_content{
+	padding: 48px 15px 0px 15px;
+}
+#analysis_a .yjgk_content ol> li{
+	height: 43px;
+	line-height: 43px;
+	color: #666666;
+	background: #e7ebf2;
+}
+#analysis_a .yjgk_content ul> li:nth-of-type(n){
+	height: 61px;
+	line-height: 61px;
+	color: #39434e;
+	background: #fff;
+}
+#analysis_a .yjgk_content ul> li:nth-of-type(2n){
+	height: 53px;
+	line-height: 53px;
+	color: #39434e;
+	background: #f7f8fa;
+}
+#analysis_a .yjgk_content ul li p{
+	margin-bottom: 0px;
+	padding: 0px;
+}
+#analysis_a .yjgk_content ol li p{
+	margin-bottom: 0px;
+	padding: 0px;
+}
+#analysis_a .yjgk_content ul li p:first-child{
+	padding-left: 60px;
+}
+#analysis_a .yjgk_content ol li p:first-child{
+	padding-left: 60px;
+}
+#analysis_a .yjgk_content ul li i.link_button{
+	background: url(../../../images/analysis/chakan_icon.png) no-repeat;
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	margin-right: 10px;
+	margin-bottom: -3px;
+}
+/*工商信息*/
+#analysis_b{
+	background: #fff;
+	border: 1px solid #e1e6eb;
+	margin-top: 24px;
+}
+#analysis_b .gsxx_title{
+	position: absolute;
+    top: -6px;
+    background-image: url(../../../images/analysis/biaoti_bg.png);
+    width: 145px;
+    height: 35px;
+    text-align: center;
+    color: #fff;
+    line-height: 35px;
+    z-index: 1;
+}
+#analysis_b .gsxx_content ul li span:first-child{
+	background: #f8f8f8;
+	width: 230px;
+	height: 38px;
+	line-height: 38px;
+	padding-left: 28px;
+	margin-right: 30px;
+	display: inline-block;
+}
+#analysis_b .gsxx_content ul li p{
+	margin-bottom: 4px;
+	padding: 0px 0px 0px 35px;
+}
+#analysis_b .gsxx_content ul li p span:nth-child(2){
+	font-size: 13px;
+    color: #767b8b;
+}
+#analysis_b .gsxx_content .gd_informat{
+	padding: 28px 0px 0px;
+}
+#analysis_b .gsxx_content .p-r-20{
+	padding-right: 20px;
+}
+#analysis_b .gsxx_content .gd_informat .gd_informat_p{
+	border-left: 5px #3356A2 solid;
+	padding-left: 12px;
+	margin-left: 5px;
+	margin: 12px;
+}
+#analysis_b .gsxx_content .gd_informat ul li{
+	height: 45px;
+	line-height: 42px;
+	margin: 0px;
+}	
+#analysis_b .gsxx_content .gd_informat ul li.row{
+	height: auto;
+}
+#analysis_b .gsxx_content .gd_informat ol li{
+	height: 42px;
+	line-height: 42px;
+	margin: 0px;
+	background: #f8f8f8;
+}
+#analysis_b .gsxx_content .gd_informat ol li p{
+	padding: 0px 0px 0px 35px;
+	margin-bottom: 0px;
+}
+#analysis_b .gsxx_content .gd_informat ul li p:first-child{
+	padding-left: 25px;
+}
+/*实时搜索框的样式*/
+.enterprise .searchCenter{
+	position: relative;
+	top: 29px;
+	left: 0px;
+}
+.enterprise .sousuocon{
+	width: 100%;
+	position: absolute;
+	top: 40px;
+	left: 0px;
+	z-index: 90;
+}
+.enterprise .sousuocon div > ul li{
+	font-size: 13px;
+	line-height: 40px;
+	padding-left: 24px;
+	text-align: left;
+	border-bottom: 1px #dedede solid;
+}
+.enterprise .sousuocon div > ul li:hover{
+	background: #ccc;
+}
+.enterprise .sousuoconjuz{
+	width: 804px;
+	margin: 0 auto;
+}
+.enterprise .sousuoconjuz>ul{
+	width: 700px;
+	background: #fff;
+	
+}
+.enterprise .p-b-25{
+	padding-bottom: 25px;
+}
+

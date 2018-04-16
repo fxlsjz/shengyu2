@@ -1,0 +1,59 @@
+.strategy .yijiul li span{
+	width: 23px;
+	height: 18px;
+	display: inline-block;
+	margin-right: 12px;
+	margin-bottom: -3px;
+}
+.strategy .yijiul li span.one{
+	background: url(../../../images/strategy/clgl_xitongcelue_icon.png) no-repeat;	
+}
+.strategy .yijiul li.active span.one{
+	background: url(../../../images/strategy/clgl_xitongcelue_icon_pressed.png) no-repeat;	
+} 
+.strategy .yijiul li span.two{
+	background: url(../../../images/strategy/clgl_zijiancelue_icon.png) no-repeat;
+}
+.strategy .yijiul li.active span.two{
+	background: url(../../../images/strategy/clgl_zijiancelue_icon_pressed.png) no-repeat;
+}
+
+#system{
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -30px;
+	margin-left: -246px;
+	margin-top: -90px;
+}
+#system .bg-img{
+	/*background: url(../../../images/strategy/bg1.jpg) no-repeat;*/
+	/*width: 100%;
+	height: 100%;*/
+	color: #cdcecf;
+	font-size: 36px;
+}
+#system .bg-img span{
+	width: 69px;
+	height: 60px;
+	display: inline-block;
+	background: url(../../../images/strategy/shangweikaifang.png);
+	margin-right: 38px;
+	vertical-align: middle;
+}
+#system .bg-img div{
+	width: 149px;
+	height: 128px;
+	margin: 0 auto;
+	background: url(../../../images/strategy/celuexitongzhongxin.png) no-repeat;
+	margin-bottom: 10px;
+}
+.strategy .bejingTu{
+	width: calc(100% - 220px); 
+	height:calc(100vh - 68px);
+	margin: 0;
+	/*background: url(../../../images/strategy/bg1.jpg) no-repeat;*/
+	background-size: 100%;
+	height:calc(100vh - 168px);
+}
