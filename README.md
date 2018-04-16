@@ -1,3 +1,3 @@
 # jijinguanwang
-基金经理官网
-http://m.webmanager.test.chinamobo.com
+基金经理2期
+https://www.win-met.com/winmetweb/#/login
